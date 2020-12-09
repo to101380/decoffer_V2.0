@@ -1,0 +1,71 @@
+<html>
+
+
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>decoffer</title>
+</head>
+
+<body>
+	
+	<div class="container" id="ticket">
+		
+	    <h1>coffer_staking</h1>
+		<p>我的地址：<span id="my_address"></span></p>
+		<p>我的ETH餘額：<span id="my_balance"></span></p>    
+	    <hr/>
+	    <h3>coffer_staking</h3>
+	    <div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		   	    <span class="input-group-text">質押金額</span>
+		  </div>
+		  <input type="text" class="form-control _staking_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0">
+		</div>	
+		<p> 手續費 : <span id="staking_fee"></span></p> 
+		<p> 質押金額 : <span id="staking_value"></span></p>  
+	    <p> 流動性比例 : <span id="_staking_hold"></span> </p>
+	    
+	    <hr/> 
+	    <p> 我質押的ETH : <span id="staking_amount"></span> ETH </p>
+	    <p> 流動性比例 : <span id="staking_hold"></span> </p>
+		<p> 獲利 : <span id="profit"></span> ETH</p>
+		<p> 權益損 : <span id="loss_right"></span> ETH</p> </p>
+		<button type="button" class="btn btn-primary" id="confirm_staking">質押</button>
+		<button type="button" class="btn btn-primary" onclick="remove();">提領</button>
+		<hr>
+		<p>可以提領的金額 : <span id="remove_taken"></span></p>
+		<p>手續費 : <span id="remove_fee"></span></p>
+		<p>總共 : <span id="earn_total"></span></p>
+	</div>
+	
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+	<script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="application/javascript"></script>   
+    <script src="./static/js/staking_pool.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>
+

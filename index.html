@@ -1,0 +1,117 @@
+<html>
+
+
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- AOS animate -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+	<!-- Customized css -->
+	<link href="./static/css/index.css" rel="stylesheet">
+
+    <title>decoffer</title>
+</head>
+
+
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+		  <a class="navbar-brand" href="#">
+		  	<img src="./static/css/img/de_coffer_title.png" width="120.4" height="28" alt="">
+		  </a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Features</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Pricing</a>
+		      </li>	     
+		    </ul>
+		  </div>
+		</div>
+	</nav>
+	<section>
+		<div class="container">
+			
+		</div>
+	</section>
+	
+	<div class="container" id="ticket">
+	    <h1>WebStock</h1>
+		<p>我的地址：<span id="my_address"></span></p>
+		<p>我的ETH餘額：<span id="my_balance"></span></p>    
+	    <hr/>
+	    <p> 我鎖入的ETH : <span id="coffer_value"></span> ETH </p>
+	    <p> 我的CT餘額 : <span id="CT_balance"></span> CT</p>
+	    <p> 我應付的CT : <span id="CT_payable"></span> CT</p>
+	    <p> 已付的CT: <span id="paid"></span> CT </p>
+	    <hr/>
+	    <p>pool : <span id="balance"></span> ETH</p>
+	    <p>流動在外的CT: <span id="out_share"></span> CT</p>
+	    <p>持有比例 : <span id="hold_rate"></span></p>
+	    <p>CT price : <span id="CT_price"></span> ETH</p>
+
+	    <hr>
+
+
+	    <div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		   	    <span class="input-group-text">存入金額</span>
+		  </div>
+		  <input type="text" class="form-control save_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0">
+		</div>    
+
+		<div class="input-group">
+		  <div class="input-group-prepend">
+		   	    <span class="input-group-text">推薦人:</span>
+		  </div>
+		  <input type="text" class="form-control recommender" aria-label="Dollar amount (with dot and two decimal places)" placeholder="0x0">
+		</div>
+		<p>存入金額: <span id="check_save_amount"></span> ETH</p>
+		<p>我的推薦人 : <span id="check_recommender"></span></p>
+		<p>我將會得到 : <span id="CT_amount"></span> CT</p>
+		<p>我應付的CT : <span id="_CT_payable"></span> CT</p>
+
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" id="confirm_transfer">存入</button>
+	</div>
+	
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+	<script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="application/javascript"></script>   
+    <script src="./static/js/index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
