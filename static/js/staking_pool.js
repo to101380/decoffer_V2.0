@@ -1,6 +1,11 @@
  // 將數值計算至小數點後四位
 
 
+function toPoint_3(point) {
+    var str = Number(point).toFixed(3);
+    return str;
+}
+
 
 function toPoint_6(point) {
     var str = Number(point).toFixed(6);
@@ -40,14 +45,21 @@ async function SHOW_CONTRACT() {
         // will default to localhost:8545
         web3 = new ethers.providers.JsonRpcProvider();
     }
+
+
+
     // 取得帳號
     const signer = web3.getSigner();   
     coinbase = await signer.getAddress();
-    $("#my_address").text(coinbase);
+
+    var hidden_str = (coinbase.substring(6,38));
+    var replace_part = coinbase.replace(hidden_str,"...");            
+    $("#my_address").text(replace_part);
+   
 
     // 取得帳號餘額
     var balance = await signer.getBalance();      
-    $("#my_balance").text(ethers.utils.formatUnits(balance));
+    $("#my_balance").text(toPoint_3(ethers.utils.formatUnits(balance)));
 
   
 
