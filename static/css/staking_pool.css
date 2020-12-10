@@ -11,6 +11,11 @@ p{
 	font-size: 13px;
 }
 
+.drop-shadow {
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3))
+}
+
 
 .cos_center{
 	background-color: #fbfbfd;
@@ -18,6 +23,15 @@ p{
 	justify-content: center;
 	align-items: center;
 	flex-direction:column;
+}
+
+.pick{
+	width: 180px;
+	height: 180px;
+	background-image: url(./img/pick.png);	  	
+  	background-position: center; /* Center the image */
+  	background-repeat: no-repeat; /* Do not repeat the image */
+ 	background-size: cover;
 }
 
 
