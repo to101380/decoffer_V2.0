@@ -21,7 +21,7 @@ h1{
 
 .drop-shadow {
     -webkit-filter: drop-shadow(6px 6px 6px rgba(255, 255, 255, 0.9));
-    filter:drop-shadow(-3px -3px 5px rgba(255, 255,255, 0.85)) drop-shadow(3px 3px 3px rgba(119, 102, 243, 0.35)); 
+    filter:drop-shadow(-3px -3px 5px rgba(255, 255,255, 0.85)) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.35)); 
 }
 
 .cos_shadow{
