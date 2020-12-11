@@ -11,26 +11,30 @@ p{
 	font-size: 13px;
 }
 
+h1{
+	color: #666666;
+}
+
 #can_withdraw{
 	display: none;
 }
 
 .drop-shadow {
-    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.18)); 
+    -webkit-filter: drop-shadow(6px 6px 6px rgba(255, 255, 255, 0.9));
+    filter:drop-shadow(-3px -3px 5px rgba(255, 255,255, 0.85)) drop-shadow(3px 3px 3px rgba(119, 102, 243, 0.35)); 
 }
 
 .cos_shadow{
 	box-shadow: 
-    3px 3px 4px 0 rgba(0, 0, 0, 0.18),
-    -8px -8px 12px 0 rgba(255, 255, 255, 0.18);
+    3px 3px 4px 0 rgba(0, 0, 0, 0.1),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.5);
 }
 
 
 
 
 .cos_center{
-	background-color:#fbfbfd;
+	background-color:#f2f2f2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
