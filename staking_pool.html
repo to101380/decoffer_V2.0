@@ -67,7 +67,9 @@
 				<p> 質押金額 : <span id="staking_value"></span> ETH</p>  
 		    	<p> 流動性比例 : <span id="_staking_hold"></span> </p>
 		    	<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" id="confirm_staking">質押</button>		    			
+		    	<div class="container cos_center">
+					<button type="button" class="btn btn-sm btn-dark" id="confirm_staking">質押</button>
+				</div>		    			
 			</div>
 			
 		</div>		
@@ -84,15 +86,21 @@
 				<p> 獲利 : <span id="profit"></span> ETH</p>
 
 				<!-- Button trigger modal -->
-				<button type="button" id="can_withdraw" class="btn btn-primary" data-toggle="modal" data-target="#staking_info">
-					提領
-				</button>
-				<button type="button" id="cant_withdraw" class="btn btn-primary disabled" data-toggle="modal">
-					提領
-				</button>
-				<button type="button" id="approve_pool" class="btn btn-primary approve_cts_btn" onclick="approve_cts();" >
-					允許合約調用
-				</button>
+				<div class="container">
+					<div class="row justify-content-between">						
+						<button type="button" id="cant_withdraw" class="btn btn-sm btn-dark disabled" data-toggle="modal">
+							提領
+						</button>
+						<button type="button" id="approve_pool" class="btn btn-sm btn-dark approve_cts_btn" onclick="approve_cts();" >
+							允許合約調用
+						</button>
+					</div>
+				</div>
+				<div class="container cos_center">
+					<button type="button" id="can_withdraw" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#staking_info">
+						提領
+					</button>
+				</div>
    			
 			</div>
 				
@@ -119,8 +127,8 @@
 			<p>總共 : <span id="earn_total"></span></p>			
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary" onclick="remove();">提領</button>
+	        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-sm btn-dark" onclick="remove();">提領</button>
 	      </div>
 	    </div>
 	  </div>
