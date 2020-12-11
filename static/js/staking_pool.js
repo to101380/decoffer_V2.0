@@ -123,7 +123,10 @@ async function SHOW_CONTRACT() {
 
     var earn_total = remove_taken-remove_fee;
     $("#earn_total").text(toPoint_8(earn_total/weiUnit));
-    
+    if (earn_total != NaN || earn_total != null) {
+        $("#staking_story").css("display","block");
+        $("#loader").css("display","none");
+    }
 
     const staking_amount = () => {
         var eth_amount = $("#ticket ._staking_amount").val(); 
