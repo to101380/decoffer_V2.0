@@ -19,7 +19,9 @@ h1{
 	display: none;
 }
 
-
+#my_staking{
+	display: none;
+}
 
 .drop-shadow {
     -webkit-filter: drop-shadow(6px 6px 6px rgba(255, 255, 255, 0.9));

@@ -103,7 +103,9 @@ async function SHOW_CONTRACT() {
     // my_info
     var staking_value = await staking_pool.staking_value(coinbase);
     $("#staking_amount").text(staking_value/weiUnit);
-   
+    if(staking_value > 0){
+        $("#my_staking").css("display","block");
+    }
 
     var loss_rights = await staking_pool.loss_rights(coinbase);
     $("#loss_right").text(toPoint_8(loss_rights/weiUnit));
