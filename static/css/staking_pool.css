@@ -7,7 +7,7 @@
 p{
 	font-family:微軟正黑體;
 	font-weight: bold;	
-	color: #343a40;
+	color: #666666;
 	font-size: 13px;
 }
 
@@ -21,13 +21,13 @@ h1{
 
 .drop-shadow {
     -webkit-filter: drop-shadow(6px 6px 6px rgba(255, 255, 255, 0.9));
-    filter:drop-shadow(-3px -3px 5px rgba(255, 255,255, 0.85)) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.35)); 
+    filter:drop-shadow(-3px -3px 5px rgba(255, 255,255, 0.9)) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.35)); 
 }
 
 .cos_shadow{
 	box-shadow: 
     3px 3px 4px 0 rgba(0, 0, 0, 0.1),
-    -8px -8px 12px 0 rgba(255, 255, 255, 0.5);
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.75);
 }
 
 
@@ -72,7 +72,7 @@ h1{
 
 
 .staking_card{	
-	border-radius: 18px;
+	border-radius: 12px;
 	padding: 30px;
 	margin: 12px 0px;	
 }
