@@ -46,16 +46,16 @@
 		</div>
 	</nav>
 	<section class="cos_center">
-		<div class="pick drop-shadow" style="margin: 60px;"></div>
+		<div class="pick drop-shadow drop-shadow_a" style="margin: 60px;"></div>
 		<h1> COFFER STAKING </h1>
-		<div class=" row justify-content-between my_address shadow-sm">
+		<div class=" row justify-content-between my_address cos_shadow">
 		    <div class="status"></div>
 		    <div style="margin-right:8px;"><span id="my_address"></span></div>
 		</div>
 
 		<div  class="container cos_center" id="ticket">
 			
-			<div class="staking_card shadow-sm ">
+			<div class="staking_card cos_shadow ">
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				   	    <span class="input-group-text">質押金額</span>		   	   
@@ -77,17 +77,25 @@
 
 		<div  class="container cos_center" id="ticket">
 			
-			<div class="staking_card shadow-sm ">				
+			<div class="staking_card cos_shadow ">			
+							
 				<p> 我質押的ETH : <span id="staking_amount"></span> ETH </p>
-	    		<p> 流動性比例 : <span id="staking_hold"></span> </p>
+					  <p> 流動性比例 : <span id="staking_hold"></span> </p>
 				<p> 獲利 : <span id="profit"></span> ETH</p>
 
-		    	<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staking_info">
-				  提領
+				<!-- Button trigger modal -->
+				<button type="button" id="can_withdraw" class="btn btn-primary" data-toggle="modal" data-target="#staking_info">
+					提領
 				</button>
-		    			
+				<button type="button" id="cant_withdraw" class="btn btn-primary disabled" data-toggle="modal">
+					提領
+				</button>
+				<button type="button" id="approve_pool" class="btn btn-primary approve_cts_btn" onclick="approve_cts();" >
+					允許合約調用
+				</button>
+   			
 			</div>
+				
 			
 		</div>		
 	</section>

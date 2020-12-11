@@ -11,14 +11,26 @@ p{
 	font-size: 13px;
 }
 
+#can_withdraw{
+	display: none;
+}
+
 .drop-shadow {
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3))
+    filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.18)); 
+}
+
+.cos_shadow{
+	box-shadow: 
+    3px 3px 4px 0 rgba(0, 0, 0, 0.18),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.18);
 }
 
 
+
+
 .cos_center{
-	background-color: #fbfbfd;
+	background-color:#fbfbfd;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -34,6 +46,15 @@ p{
  	background-size: cover;
 }
 
+.pick_icon{
+	width: 30px;
+	height: 30px;
+	background-image: url(./img/pick.png);	  	
+  	background-position: center; /* Center the image */
+  	background-repeat: no-repeat; /* Do not repeat the image */
+ 	background-size: cover;
+}
+
 
 
 .my_address{
@@ -42,15 +63,14 @@ p{
 	align-items: center;	
 	border-radius: 30px;	
 	padding: 8px;
-	margin: 30px;	
+	margin: 30px;
 }
 
 
-.staking_card{
+.staking_card{	
 	border-radius: 18px;
 	padding: 30px;
-	margin: 12px 0px;
-
+	margin: 12px 0px;	
 }
 
 .status{
