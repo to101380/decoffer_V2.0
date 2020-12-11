@@ -42,9 +42,13 @@ async function SHOW_CONTRACT() {
         // 啟用metamask
         await window.ethereum.enable();
         web3 = new ethers.providers.Web3Provider(window.ethereum);
+        $("#install_wallet").css("display","none");
+
     } else {
         // will default to localhost:8545
         web3 = new ethers.providers.JsonRpcProvider();
+        $("#loader").css("display","none");
+        $("#staking_story").css("display","none");
     }
 
 
