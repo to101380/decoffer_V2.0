@@ -55,8 +55,8 @@ h1{
 }
 
 .pick{
-	width: 180px;
-	height: 180px;
+	width: 200px;
+	height: 200px;
 	background-image: url(./img/pick.png);	  	
   	background-position: center; /* Center the image */
   	background-repeat: no-repeat; /* Do not repeat the image */
