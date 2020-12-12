@@ -35,9 +35,10 @@ h1{
 	height: 650px;
 }
 
+
 .drop-shadow {
     -webkit-filter: drop-shadow(-8px -8px 12px rgba(255, 255, 255, 0.75)) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.1));
-    filter:drop-shadow(-8px -8px 12px rgba(255, 255, 255, 0.75)) drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.2)); 
+    filter:drop-shadow(-3px -3px 4px rgba(255, 255, 255, 0.65)) drop-shadow(2px 2px 3px rgba(52, 58, 64, 0.65)); 
 }
 
 .cos_shadow{
@@ -184,3 +185,4 @@ h1{
     height: 5em;
   }
 }
+
