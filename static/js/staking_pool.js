@@ -48,7 +48,7 @@ async function SHOW_CONTRACT() {
         // will default to localhost:8545
         web3 = new ethers.providers.JsonRpcProvider();
         $("#loader").css("display","none");
-        $("#staking_story").css("display","none");
+       
     }
 
 

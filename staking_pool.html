@@ -46,20 +46,23 @@
 		</div>
 	</nav>	
 
-	<section class="cos_center" id="install_wallet">
-		<div class="pick drop-shadow"></div>
-		<h3 style="margin: 30px"> COFFER STAKING </h3>
+	<section class="title_banner cos_center">
+		<div class="pick drop-shadow" style="margin: 120px 30px 15px 30px;"></div>
+		<h3 style="margin: 30px"> COFFER STAKING </h3>		
+	</section>
+
+	<section class="cos_center" id="install_wallet">			
 		<div class="staking_card cos_shadow">
 			<div class="container">
 				<div class="row">
-					<a href="https://token.im/download"><img src="./static/css/img/imtoken.png" width="40" height="40" style="margin: 6px;"></a>
-					<a href="https://metamask.io/download.html"><img src="./static/css/img/metamask-social.png" width="40" height="40" style="margin: 6px;"></a>
-					<a href="https://www.parity.io/signer/"><img src="./static/css/img/parity_logo.png" width="40" height="40" style="margin: 6px;"></a>
+					<a href="https://token.im/download" target="_blank"><img src="./static/css/img/imtoken.png" width="40" height="40" style="margin: 6px;"></a>
+					<a href="https://metamask.io/download.html" target="_blank"><img src="./static/css/img/metamask-social.png" width="40" height="40" style="margin: 6px;"></a>
+					<a href="https://www.parity.io/signer/" target="_blank"><img src="./static/css/img/parity_logo.png" width="40" height="40" style="margin: 6px;"></a>
 				</div>
 				<div class="row">
-					<a href="https://status.im"><img src="./static/css/img/status_logo.png" width="40" height="40" style="margin: 6px;"></a>
-					<a href="https://trustwallet.com"><img src="./static/css/img/trustwallet.png" width="40" height="40" style="margin: 6px;"></a>
-					<a href="https://blocto.portto.io/zh/"><img src="./static/css/img/blocto-social.png" width="40" height="40" style="margin: 6px;"></a>
+					<a href="https://status.im" target="_blank"><img src="./static/css/img/status_logo.png" width="40" height="40" style="margin: 6px;"></a>
+					<a href="https://trustwallet.com" target="_blank"><img src="./static/css/img/trustwallet.png" width="40" height="40" style="margin: 6px;"></a>
+					<a href="https://blocto.portto.io/zh/" target="_blank"><img src="./static/css/img/blocto-social.png" width="40" height="40" style="margin: 6px;"></a>
 				</div>
 			</div>							
 		</div>
@@ -70,71 +73,69 @@
 		<div class="loader"></div>
 	</section> 
 
-	<section id="staking_story">
-		<section class="cos_center">
-			<div class="pick drop-shadow" style="margin: 120px 30px 15px 30px;"></div>
-			<h3 style="margin: 30px"> COFFER STAKING </h3>
-			<div class=" row justify-content-between my_address cos_shadow">
-			    <div class="status"></div>
-			    <div style="margin-right:8px;"><span id="my_address"></span></div>
-			</div>
+	<section id="staking_story"> 
+	<section class="cos_center">		
+		<div class=" row justify-content-between my_address cos_shadow">
+		    <div class="status"></div>
+		    <div style="margin-right:8px;"><span id="my_address"></span></div>
+		</div>
 
-			<div  class="container cos_center" id="ticket">
-				
-				<div class="staking_card cos_shadow ">
-					<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					   	    <span class="input-group-text">質押金額</span>		   	   
-					  </div>
-					  <input type="text" class="form-control _staking_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0">	   
-					</div>
-					<p class="text-right" style="font-size: 8px;">我的ETH餘額：<span id="my_balance"></span> ETH</p>
-					<p> 手續費 : <span id="staking_fee"></span> ETH</p> 
-					<p> 質押金額 : <span id="staking_value"></span> ETH</p>  
-			    	<p> 流動性比例 : <span id="_staking_hold"></span> </p>
-			    	<!-- Button trigger modal -->
-			    	<div class="container cos_center">
-						<button type="button" class="btn btn-sm btn-dark" id="confirm_staking">質押</button>
-					</div>		    			
-				</div>
-				
-			</div>		
-		</section>
-
-		<section class="cos_center" style="padding-bottom:30px;">
+		<div  class="container cos_center" id="ticket">
 			
+			<div class="staking_card cos_shadow ">
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				   	    <span class="input-group-text">質押金額</span>		   	   
+				  </div>
+				  <input type="text" class="form-control _staking_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0">	   
+				</div>
+				<p class="text-right" style="font-size: 8px;">我的ETH餘額：<span id="my_balance"></span> ETH</p>
+				<p> 手續費 : <span id="staking_fee"></span> ETH</p> 
+				<p> 質押金額 : <span id="staking_value"></span> ETH</p>  
+		    	<p> 流動性比例 : <span id="_staking_hold"></span> </p>
+		    	<!-- Button trigger modal -->
+		    	<div class="container cos_center">
+					<button type="button" class="btn btn-sm btn-dark" id="confirm_staking">質押</button>
+				</div>		    			
+			</div>
+			
+		</div>		
+	</section>
 
-			<div  class="container cos_center">
-				
-				<div class="staking_card cos_shadow" id="my_staking">			
-					<p class="text-center little_title">挖礦資訊</p>			
-					<p> 我質押的ETH : <span id="staking_amount"></span> ETH </p>
-						  <p> 流動性比例 : <span id="staking_hold"></span> </p>
-					<p> 獲利 : <span id="profit"></span> ETH</p>
+	<section class="cos_center" style="padding-bottom:30px;">			
 
-					<!-- Button trigger modal -->
-					<div class="container">
-						<div class="row justify-content-between">						
-							<button type="button" id="cant_withdraw" class="btn btn-sm btn-dark disabled" data-toggle="modal">
-								提領
-							</button>
-							<button type="button" id="approve_pool" class="btn btn-sm btn-dark approve_cts_btn" onclick="approve_cts();" >
-								允許合約調用
-							</button>
-						</div>
-					</div>
-					<div class="container cos_center">
-						<button type="button" id="can_withdraw" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#staking_info">
+		<div  class="container cos_center">
+			
+			<div class="staking_card cos_shadow" id="my_staking">			
+				<p class="text-center little_title">挖礦資訊</p>			
+				<p> 我質押的ETH : <span id="staking_amount"></span> ETH </p>
+					  <p> 流動性比例 : <span id="staking_hold"></span> </p>
+				<p> 獲利 : <span id="profit"></span> ETH</p>
+
+				<!-- Button trigger modal -->
+				<div class="container">
+					<div class="row justify-content-between">						
+						<button type="button" id="cant_withdraw" class="btn btn-sm btn-dark disabled" data-toggle="modal">
 							提領
 						</button>
+						<button type="button" id="approve_pool" class="btn btn-sm btn-dark approve_cts_btn" onclick="approve_cts();" >
+							允許合約調用
+						</button>
 					</div>
-	   			
 				</div>
-					
+				<div class="container cos_center">
+					<button type="button" id="can_withdraw" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#staking_info">
+						提領
+					</button>
+				</div>
+   			
+			</div>
 				
-			</div>		
-		</section>
+			
+		</div>		
 	</section>
+	</section>
+
 
 	<footer class="cos_center">
 		<div class="container-fluid cos_footer">
