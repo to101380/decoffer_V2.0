@@ -7,12 +7,12 @@
 p{
 	font-family:微軟正黑體;
 	font-weight: bold;	
-	color: #666666;
+	color: #84959e;
 	font-size: 13px;
 }
 
 h3{
-	color: #666666;
+	color: #84959e;  
 }
 
 #can_withdraw{
@@ -38,13 +38,13 @@ h3{
 
 .drop-shadow {
     -webkit-filter: drop-shadow(-3px -3px 4px rgba(255, 255, 255, 0.85)) drop-shadow(2px 2px 3px rgba(52, 58, 64, 0.55));
-    filter:drop-shadow(-2px -2px 3px rgba(255, 255, 255, 0.85)) drop-shadow(2px 2px 3px rgba(52, 58, 64, 0.8)); 
+    filter:drop-shadow(-4px 3px 4px rgba(255, 255, 255, 0.85)) drop-shadow(4px 3px 4px rgba(52, 58, 64, 0.70)); 
 }
 
 .cos_shadow{
 	box-shadow: 
     3px 3px 4px 0 rgba(0, 0, 0, 0.1),
-    -8px -8px 12px 0 rgba(255, 255, 255, 0.75);
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.65);
 }
 
 .cos_footer{
@@ -60,30 +60,32 @@ h3{
 
 
 .cos_center{
-	background-color:#f2f2f2;
+	background-color:#f2f3f7;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction:column;	
 }
 
+
+.cos_border{
+  border: 1px solid #cecece;
+  border-radius: 12px;
+  padding: 48px;
+  margin: 12px 
+}
+
+
 .pick{
 	width: 200px;
 	height: 200px;
 	background-image: url(./img/pick.png);	  	
-  	background-position: center; /* Center the image */
-  	background-repeat: no-repeat; /* Do not repeat the image */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
  	background-size: cover;
 }
 
-.pick_icon{
-	width: 30px;
-	height: 30px;
-	background-image: url(./img/pick.png);	  	
-  	background-position: center; /* Center the image */
-  	background-repeat: no-repeat; /* Do not repeat the image */
- 	background-size: cover;
-}
+
 
 
 
@@ -109,6 +111,8 @@ h3{
 	border-radius: 50%;
 	background-color: #49b782;	
 	margin: 8px;
+  box-shadow: 2px 2px 2px 0 rgba(73, 183, 130, 0.75);
+    
 }
 
 .little_title{

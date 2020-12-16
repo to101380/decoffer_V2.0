@@ -1,4 +1,32 @@
- // 將數值計算至小數點後四位
+// 將數值計算至小數點後四位
+
+
+var apikey = {
+    key:'8cd5ffee-da32-4ead-8913-ce590a512e2f'
+}
+
+
+$(document).ready(function(){
+    $.ajax({
+        method:"GET",
+        url: "https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY="+ apikey.key,                
+      }).done(function(msg) {  
+        
+        console.log(msg); 
+        console.log(msg.data.defi_market_cap);  
+        $(".test").text(msg.data.defi_market_cap);      
+
+      });
+
+
+})
+
+
+
+
+
+
+
 
 
 function toPoint_3(point) {
@@ -142,14 +170,7 @@ async function SHOW_CONTRACT() {
         var CTs_amount = eth_amount*out_share/(Number(liquid)+Number(profit));
         var hold_rate = CTs_amount/out_share;       
 
-        
         $("#_staking_hold").text(toPercent(hold_rate));
-        
-        
-        
-    
-      
-      
        
     };
 
