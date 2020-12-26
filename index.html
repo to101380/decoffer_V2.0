@@ -56,22 +56,28 @@
 	
 	<div class="container" id="ticket">
 	    
-		<p>我的地址：<span id="my_address"></span></p>
-		<p>我的ETH餘額：<span id="my_balance"></span></p>    
+		<p> 我的地址：<span id="my_address"></span></p>
+		<p> 我的ETH餘額：<span id="my_balance"></span></p>    
 	    <hr/>
 	    <p> 合約餘額 : <span id="now_balance"></span> ETH</p>
-	    <p> 我鎖入的ETH : <span id="coffer_value"></span> ETH </p>
-	    <p> 我的CT餘額 : <span id="CT_balance"></span> CT</p>
-	    <p> 我應付的CT : <span id="CT_payable"></span> CT</p>
-	    <p> 已付的CT: <span id="paid"></span> CT </p>
+	    <p> 我鎖入的ETH : <span id="coffer_value"></span> ETH </p>	 
+	    <p> 利息 : <span id="profit"></span> ETH</p>   
+	    <hr/>	  
+	    <h4>credit token info</h4>
+
+	    <p> 流動在外的枚數 : <span id="out_share"></span> </p>
+	    <p> 已銷毀的枚數 : <span id="destroy"></span></p>
+	    <p> 我持有的枚數 : <span id="CT_balance"></span></p>
+	    <p> 我持有的比例 : <span id="hold_rate"></span></p>
+	    <p> 目前價格 : <span id="ct_price"></span> ETH</p>
 	    <hr/>
-	    <p>pool : <span id="balance"></span> ETH</p>
-	    <p>流動在外的CT: <span id="out_share"></span> CT</p>
-	    <p>持有比例 : <span id="hold_rate"></span></p>
-	    <p>CT price : <span id="CT_price"></span> ETH</p>
+	    <h4>事業</h4>
 
-	    <hr>
-
+	    <p> 我的推薦人 : <span id="my_recommender"></span> </p>
+	    <p> 我的推薦人數 : <span id="recommender_number"></span></p>
+	    <p> 我已賺到的獎金 : <span id="earned_bonus"></span> ETH</p>
+	    <hr/>
+	    <p> 提領線 :  <span id="withdraw_line"></span></p>
 
 	    <div class="input-group mb-3">
 		  <div class="input-group-prepend">
@@ -88,8 +94,7 @@
 		</div>
 		<p>存入金額: <span id="check_save_amount"></span> ETH</p>
 		<p>我的推薦人 : <span id="check_recommender"></span></p>
-		<p>我將會得到 : <span id="CT_amount"></span> CT</p>
-		<p>我應付的CT : <span id="_CT_payable"></span> CT</p>
+		<p>我將會得到 : <span id="CT_amount"></span> CT</p>		
 
 		<!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary" id="confirm_transfer">存入</button>
