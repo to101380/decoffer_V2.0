@@ -100,3 +100,11 @@ a{
 	background-repeat: no-repeat; /* Do not repeat the image */
  	background-size: cover;	  	
 }
+
+.cos_footer{
+	background-color:#343a40;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	padding: 30px; 	
+}
