@@ -1,7 +1,7 @@
 
 *{
     /*font-family:微軟正黑體;*/
-    /*border: solid black 1px ;	  */
+   /* border: solid black 1px ;	  */
 } 
 
 p{
@@ -12,6 +12,16 @@ p{
 }
 
 h3{
+	color: #84959e; 
+}
+
+h5{
+	font-size: 15px;
+}
+
+
+
+a{
 	color: #84959e;  
 }
 
@@ -47,7 +57,7 @@ h3{
 	border-radius: 50%;
 	background-color: #49b782;	
 	margin: 8px;
-   box-shadow: 2px 2px 2px 0 rgba(73, 183, 130, 0.75);
+    box-shadow: 2px 2px 2px 0 rgba(73, 183, 130, 0.75);
     
 }
 
