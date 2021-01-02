@@ -33,32 +33,38 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="#"> 存款 <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="./index.html"> 存款 <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#"> 借貸 </a>
+		        <a class="nav-link" href="./credit.html"> 借貸 </a>
 		      </li>		      
 		      <li class="nav-item">
 		        <a class="nav-link" href="./staking_pool.html"> 質押 </a>
 		      </li>	
 		      <li class="nav-item">
-		        <a class="nav-link" href="#"> 保險 </a>
+		        <a class="nav-link" href="./insurance.html"> 保險 </a>
 		      </li>	      
 		    </ul>
 		  </div>
 		</div>
 	</nav>
+	
 	<section class="title_banner main_style">
-		<div class="coffer_img drop-shadow" style="margin: 120px 30px 15px 30px;"></div>
-		<h3 style="margin: 30px"> DECOFFER </h3>
+
+		<div class="coffer_img drop-shadow" style="margin: 100px 30px 35px 30px;"></div>
+		<h4>市場規模 : 1,153,123 ETH</h4>	
+		<h4>利用率 : 85.45% </h4>			
+		
 
 		<div class=" row justify-content-between my_address cos_shadow">
 		    <div class="status"></div>
 		    <div style="margin-right:8px;"><span id="my_address"></span></div>
 		</div>	
-		<h4>市場規模 : 1,153,123 ETH</h4>	
-		<h4>利用率 : 85.45% </h4>	
+		
+		
+			
 		<a type="button" class="btn btn-dark" href="" style="margin: 30px 2px;" >快速開始</a>
+
 	</section>
 	
 
@@ -89,10 +95,10 @@
 							    <img src="./static/css/img/index_icon/progress_bar.png" width="30" height="30" class="mr-3" alt="...">
 							    <div class="media-body">
 							      <h5 class="mt-0 mb-1">期約：</h5>							      
-								  <p>提領線達100%可隨時提領 
-								  	<a  data-toggle="modal" data-target="#withdraw_line">
+								  <p>提領線達100%可隨時提領。
+								  	<a  data-toggle="modal" data-target="#withdraw_line_info">
 								      <img src="./static/css/img/index_icon/question.png" width="13" height="13">
-								    </a>。
+								    </a>
 								  </p>						      
 							    </div>
 							  </li>
@@ -207,22 +213,19 @@
 
 	<!-- 彈跳提示窗 -->
 	
-	<div class="modal fade" id="withdraw_line" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<!-- Modal -->
+	<div class="modal fade" id="withdraw_line_info" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+	    <div class="modal-content" style="border:0px;">
+	      <div class="modal-header" style="border:0px;">
+	        <h5 class="modal-title" id="exampleModalCenterTitle">什麼是提領線?</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
-	      <div class="modal-body">
+	      <div class="modal-body" style="border:0px;">
 	        ...
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	      </div>
+	      </div>	      
 	    </div>
 	  </div>
 	</div>
