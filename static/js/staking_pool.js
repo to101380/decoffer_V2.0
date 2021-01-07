@@ -114,8 +114,6 @@ async function SHOW_CONTRACT() {
    
     
 
-
-
  
     //CTs_info
     var CTs_total_supply = await ct_staking.totalSupply();
