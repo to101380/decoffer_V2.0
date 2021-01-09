@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 	<!-- Customized css -->
-	<link href="./static/css/hight_staking.css" rel="stylesheet">
+	<link href="./static/css/save.css" rel="stylesheet">
 	<link rel="icon" href="./static/css/img/de_coffer_logo.png" type="image/x-icon">
 
     <title>decoffer</title>
@@ -22,7 +22,7 @@
 
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#0591e6;">
 		<div class="container">
 		  <a class="navbar-brand" href="./index.html">
 		  	<img src="./static/css/img/de_coffer_title.png" width="120.4" height="28" alt="">
@@ -48,48 +48,12 @@
 		  </div>
 		</div>
 	</nav>
-	
-
-	<section class="main_style">
-
-		<p>我的地址 : <span id="my_address"></span> </p>
-		<p>我的餘額 : <span id="my_balance"></span> </p>
-
-		<p>我投入的資金 : <span id="staking_value"></span> ETH</p>
-		<p>扣除權重 : <span id="loss_weight"></span> </p>
-		<p>我提供的動力比例 : <span id="hold_rate"></span></p>
-		<p>代幣 : <span id="get_token"></span> </p>
-		<p>挖礦獲利 : <span id="profit"></span> ETH</p>		
-		<p>推薦獎金 : <span id="bonus"></span> </p>
-		<p>我的推薦人 : <span id="RT"></span> </p>
-		<p>我推薦人數 : <span id="RTn"></span> </p>
-		<p>碎礦: <span id="fragments"></span> </p>
-	
-	</section>
 	<section>
-		
-		<div class="container invest" id="create_staking">
-			<div class="input-group mb-3">
-			  <div class="input-group-prepend">
-			   	    <span class="input-group-text">存入金額</span>
-			  </div>
-			  <input type="text" class="form-control staking_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0">			  
-			</div> 			
-
-			<div class="input-group">
-			  <div class="input-group-prepend">
-			   	    <span class="input-group-text">推薦人:</span>
-			  </div>
-			  <input type="text" class="form-control recommender" aria-label="Dollar amount (with dot and two decimal places)" placeholder="0x0">
-			</div>
-		</div>	
-
-		<p>投入金額: <span id="check_save_amount"></span> </p>
-		<p>我推薦人 : <span id="check_recommender"></span> </p>
-		<button id="confirm_staking" type="button" class="btn btn-dark"  style="margin: 30px 2px;" >建立</button>
-		<button type="button" class="btn btn-dark" onclick="dt_approve();" style="margin: 30px 2px;" >approve</button>
-
+		sdf
 	</section>
+	
+
+
 
 	<footer class="cos_center">
 		<div class="container-fluid cos_footer">
@@ -98,10 +62,14 @@
 		</div>		
 	</footer>
 
-	<!-- 彈跳提示窗 -->
+	
 	
 
-	<html> 
+
+	<html>
+
+
+
 
 
 
@@ -113,7 +81,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
 	<script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="application/javascript"></script>   
-    <script src="./static/js/hight_staking.js"></script>
+    <script src="./static/js/save_coffer.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

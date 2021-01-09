@@ -79,9 +79,13 @@ async function SHOW_CONTRACT() {
 
 
     // fee
+    var minimum = await hight_staking.fee_info(1,1);   
     var withdraw_fee = await hight_staking.fee_info(1,2); 
-   
-    
+    var RT_01 = await hight_staking.fee_info(2,1); 
+    var RT_02 = await hight_staking.fee_info(2,2); 
+    var RT_03 = await hight_staking.fee_info(2,3); 
+    var liquid = await hight_staking.fee_info(3,1); 
+    var distribute_rate = await hight_staking.fee_info(3,2); 
 
     //staking_info
     var staking_value = await hight_staking.staking_info(coinbase,1);  
@@ -130,6 +134,7 @@ async function SHOW_CONTRACT() {
 
     const set_staking_amount = () => {
         var save_amount = $("#create_staking .staking_amount").val(); 
+        var distribute = save_amount*distribute_rate/1000;
         $("#check_save_amount").text(save_amount);
         
     };
