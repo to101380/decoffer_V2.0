@@ -35,8 +35,8 @@ var ct_token;
 var coinbase;
 var CT_price;
 var ct_totalSupply;
-var payable;
-var discount;
+var _fine;
+var owner;
 
 async function SHOW_CONTRACT() {
     // 確認是否有window.ethereum
@@ -65,9 +65,9 @@ async function SHOW_CONTRACT() {
   
 
     // 建立合約
-    decoffer_address = "0x0Ece0233Eefe98E788a05Cfec1bfA700Ad9CEf92";
+    decoffer_address = "0x06Fa3F78BcbB247060807EE75010c0b2Ed319e8F";
     var decoffer_abi = [{"constant":false,"inputs":[{"name":"_recommender","type":"address"}],"name":"invest","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"transfer_owner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"fee_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"recommender","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"coffer_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"recommender_number","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"authorize","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"p1","type":"uint256"},{"name":"p2","type":"uint256"},{"name":"p3","type":"uint256"}],"name":"set_parameter","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get_balance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get_out_share","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"cancel_authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"input","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_ct","type":"uint256"},{"name":"_eth","type":"uint256"},{"name":"_user","type":"address"}],"name":"CT_swap_ETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":true,"stateMutability":"payable","type":"constructor"}]
-    var ct_address = "0xd183f6caf9C48B0B6Ef27AB0A98E0ee361691221";
+    var ct_address = "0xcb3dB344F008FbD583c3fe1baeD193DC5f25c594";
     var ct_abi = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"acceptOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"},{"name":"data","type":"bytes"}],"name":"approveAndCall","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"newOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tokenAddress","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferAnyERC20Token","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenOwner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Approval","type":"event"}]
 
     de_coffer = new ethers.Contract(decoffer_address, decoffer_abi, signer);
@@ -78,7 +78,7 @@ async function SHOW_CONTRACT() {
     var now_balance = await de_coffer.get_balance();;
     $("#now_balance").text(ethers.utils.formatUnits(now_balance));
 
-    var owner = await de_coffer.owner();
+    owner = await de_coffer.owner();
 
     //fee
     var least_invest = await de_coffer.fee_info(1,1);       // 1-1最小投資金額
@@ -97,7 +97,7 @@ async function SHOW_CONTRACT() {
     var earned_bonus = await de_coffer.coffer_info(coinbase,0);
     var coffer_value = await de_coffer.coffer_info(coinbase,1);
     var save_price = await de_coffer.coffer_info(coinbase,2);
-    payable = await de_coffer.coffer_info(coinbase,3);
+    var payable = await de_coffer.coffer_info(coinbase,3);
     var credit = await de_coffer.coffer_info(coinbase,4);
     var get_CT = await de_coffer.coffer_info(coinbase,5);
     $("#coffer_value").text(ethers.utils.formatUnits(coffer_value));
@@ -112,6 +112,7 @@ async function SHOW_CONTRACT() {
     var hidden_str = (my_recommender.substring(6,38));
     var replace_part = my_recommender.replace(hidden_str,"...");            
     $("#my_recommender").text(replace_part);
+    
 
     //CT_info
     var CT_balance = await ct_token.balanceOf(coinbase);    
@@ -120,27 +121,27 @@ async function SHOW_CONTRACT() {
     ct_totalSupply = await ct_token.totalSupply();         
     $("#CT_balance").text(ethers.utils.formatUnits(CT_balance));
     $("#destroy").text(ethers.utils.formatUnits(destroy));
-    $("#out_share").text(toPoint_6(out_share/(10**18)));
+    $("#out_share").text(out_share/(10**18));
     $("#hold_rate").text(toPercent(CT_balance/out_share));
+   
 
-    var CT_price = now_balance/out_share;   
+    var CT_price = now_balance/out_share;       
     $("#ct_price").text(CT_price);
 
     
     // withdraw line
-
-    var profit = (CT_price*get_CT)-save_price;        
+    var profit = (CT_price*get_CT)-save_price;    
     var Actual_Profit = profit*actual_profit/1000;
-    discount = profit-Actual_Profit;
+    var discount = profit-Actual_Profit;
     var line = toPercent(discount/payable);    
     $("#withdraw_line").text(line);
-    $("#termination_fee").text((payable-discount)/(10**18));
+
+    _fine = payable - discount +10000; 
+    $("#termination_fee").text(toPoint_8(_fine/(10**18)));
 
     var after_tax_profit = Actual_Profit-(Actual_Profit*profit_rake/1000)
     $("#profit").text(toPoint_8(after_tax_profit/(10**18)));
     
-    
-
     
  
 
@@ -190,7 +191,13 @@ comfirm_transfer.addEventListener("click", async (e) => {
         value: ethers.utils.parseEther(amount)     // ether in this case MUST be a string       
     };    
 
-    _save_coffer(recommender,overrides);
+     if( recommender == null || recommender == undefined || recommender == ''){
+        _save_coffer(owner,overrides);
+     }else{
+        _save_coffer(recommender,overrides);
+     }
+    
+     
    
 });
 
@@ -209,7 +216,7 @@ function _save_coffer(recommender,overrides){
 
 function _withdraw(){
 
-    var repayment = Number(payable-discount).toString();
+    var repayment = Number(_fine).toString();
     
     let fine = {        
         value: repayment   // ether in this case MUST be a string       
