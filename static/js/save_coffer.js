@@ -133,8 +133,17 @@ async function SHOW_CONTRACT() {
     var profit = (CT_price*get_CT)-save_price;    
     var Actual_Profit = profit*actual_profit/1000;
     var discount = profit-Actual_Profit;
-    var line = toPercent(discount/payable);    
-    $("#withdraw_line").text(line);
+
+
+    var line = toPercent(discount/payable); 
+
+    if (line == NaN) {
+
+        $("#withdraw_line").text("0%");
+    }else{
+         $("#withdraw_line").text(line);
+    }
+   
 
     _fine = payable - discount +10000; 
     $("#termination_fee").text(toPoint_8(_fine/(10**18)));
