@@ -119,8 +119,8 @@ async function SHOW_CONTRACT() {
     var destroy = await ct_token.balanceOf("0x0000000000000000000000000000000000000000");   
     var out_share = await de_coffer.get_out_share(); 
     ct_totalSupply = await ct_token.totalSupply();         
-    $("#CT_balance").text(ethers.utils.formatUnits(CT_balance));
-    $("#destroy").text(ethers.utils.formatUnits(destroy));
+    $("#CT_balance").text(toPoint_4(ethers.utils.formatUnits(CT_balance)));
+    $("#destroy").text(toPoint_4(ethers.utils.formatUnits(destroy)));
     $("#out_share").text(out_share/(10**18));
     $("#hold_rate").text(toPercent(CT_balance/out_share));
    
