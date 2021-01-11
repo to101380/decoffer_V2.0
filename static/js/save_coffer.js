@@ -136,8 +136,8 @@ async function SHOW_CONTRACT() {
 
 
     var line = toPercent(discount/payable); 
-
-    if (line == NaN) {
+    
+    if (line == "NaN%") {
 
         $("#withdraw_line").text("0%");
     }else{
