@@ -152,6 +152,10 @@ async function SHOW_CONTRACT() {
     $("#profit").text(toPoint_8(after_tax_profit/(10**18)));
     
     
+    if (after_tax_profit != NaN || after_tax_profit != null) {
+        $("#save-story").css("display","block");
+        $("#loader").css("display","none");
+    }
  
 
 
