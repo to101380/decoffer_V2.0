@@ -15,6 +15,11 @@ h3{
 	color: #84959e;  
 }
 
+h4{
+  font-family:微軟正黑體;
+  font-weight: bold;  
+}
+
 
 
 a{
@@ -29,6 +34,7 @@ a{
 #loader{
 	height: 650px;
 }
+
 
 .main_style{
   background-color:#f2f3f7;
@@ -71,18 +77,13 @@ a{
 }
 
 
-.cos_border{
-  border: 1px solid #cecece;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 1px 
-}
 
 
 .info_card{ 
-  border-radius: 12px;
-  padding: 2px; 
+  border-radius: 8px;
+  padding: 18px 16px; 
   margin:12px;
+  background-color: #FFFF;
 }
 
 
@@ -136,6 +137,8 @@ a{
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
+
+
 
 .loader:before,
 .loader:after {
