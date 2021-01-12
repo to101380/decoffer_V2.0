@@ -68,11 +68,18 @@
 				      		<hr>
 
 					      	<p> 我鎖入的ETH :  </p>
-					      	<img class="img_center" src="./static/css/img/ETH.png" width="60" height="60">
-					      	<h4  class="text-center" style="margin:20px 10px 30px 10px;"><span id="coffer_value"></span> ETH</h4>	 
+					      	<img class="img_center" src="./static/css/img/ETH.png" width="60" height="60" style="margin-top:45px;">
+					      	<h4  class="text-center" style="margin:20px 10px 45px 10px;"><span id="coffer_value"></span> ETH</h4>	 
 						    <p> 利息 : <span id="profit"></span> ETH</p> 
 						    <p> 提領線 :  <span id="withdraw_line"></span></p>
 						    <p> 解約金 : <span id="termination_fee"></span></p>
+						    <div class="cos_center justify-content-around" style="flex-direction: row; margin-top: 45px;">
+						    	<button type="button" class="btn btn-dark btn-sm" onclick="approve_ct();" id="approve_btn">approve</button>
+							    <button type="button" class="btn btn-dark btn-sm" onclick="_withdraw();" id="withdraw_btn">withdraw</button>
+							    <button type="button" class="btn btn-dark btn-sm disabled" id="withdraw_disbtn" >withdraw</button>
+						    </div>
+							   
+							
 						
 						    
 						    
@@ -190,8 +197,8 @@
 			<p>我將會得到 : <span id="CT_amount"></span> CT</p>		
 
 			<button type="button" class="btn btn-primary" id="confirm_invest">存入</button>
-			<button type="button" class="btn btn-primary" onclick="approve_ct();">approve</button>
-			<button type="button" class="btn btn-primary" onclick="_withdraw();">withdraw</button>
+			
+		
 		</div>
 
 

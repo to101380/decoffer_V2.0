@@ -28,7 +28,9 @@ a{
 
 } 
 
-
+#withdraw_btn{
+  display: none;
+}
 
 
 #loader{

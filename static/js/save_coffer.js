@@ -118,12 +118,18 @@ async function SHOW_CONTRACT() {
     var CT_balance = await ct_token.balanceOf(coinbase);    
     var destroy = await ct_token.balanceOf("0x0000000000000000000000000000000000000000");   
     var out_share = await de_coffer.get_out_share(); 
+    var allowance = await ct_token.allowance(coinbase,decoffer_address);     
     ct_totalSupply = await ct_token.totalSupply();         
     $("#CT_balance").text(toPoint_4(ethers.utils.formatUnits(CT_balance)));
     $("#destroy").text(toPoint_4(ethers.utils.formatUnits(destroy)));
     $("#out_share").text(toPoint_4(out_share/(10**18)));
     $("#hold_rate").text(toPercent(CT_balance/out_share));
    
+    if(allowance > 0){
+        $("#withdraw_btn").css("display","block");
+        $("#approve_btn").css("display","none");
+        $("#withdraw_disbtn").css("display","none");
+    }
 
     var CT_price = now_balance/out_share;       
     $("#ct_price").text(CT_price);
