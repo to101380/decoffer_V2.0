@@ -39,7 +39,7 @@
 		        <a class="nav-link" href="./credit.html"> 借貸 </a>
 		      </li>		      
 		      <li class="nav-item">
-		        <a class="nav-link" href="./staking_pool.html"> 質押 </a>
+		        <a class="nav-link" href="./hight_staking.html"> 質押 </a>
 		      </li>	
 		      <li class="nav-item">
 		        <a class="nav-link" href="./insurance.html"> 保險 </a>
@@ -63,8 +63,8 @@
 					<div class="col-md-6">
 
 						<div class="info_card shadow-sm" >	
-
-				      		<h4 class="text-center" style="margin: 18px;">我的帳戶</h4>
+							
+				      		<h4 class="text-center" style="margin: 18px;">我的帳戶</h4>		      			
 				      		<hr>
 
 					      	<p> 我鎖入的ETH :  </p>
@@ -72,6 +72,7 @@
 					      	<h4  class="text-center" style="margin:20px 10px 45px 10px;"><span id="coffer_value"></span> ETH</h4>	 
 						    <p> 利息 : <span id="profit"></span> ETH</p> 
 						    <p> 提領線 :  <span id="withdraw_line"></span></p>
+						    <p> 贖回 : <span id="my_CT"></span> / <span id="payable_CT"></span></p>
 						    <p> 解約金 : <span id="termination_fee"></span></p>
 						    <div class="cos_center justify-content-around" style="flex-direction: row; margin-top: 45px;">
 						    	<button type="button" class="btn btn-dark btn-sm" onclick="approve_ct();" id="approve_btn">approve</button>
@@ -110,17 +111,39 @@
 			</div>
 		</section>
 
-		<section class="main_styl" style="background-color: #FFFFFF">
+		<section class="main_style" style="background-color: #FFFFFF">
 
 			<h4>建立存款單</h4>
+
+			<div class=" row justify-content-between my_address cos_shadow">
+			    <div class="status"></div>
+			    <div style="margin-right:8px;"><span id="my_address"></span></div>
+			</div>
+
 			<div class="container">
 				<div class="row justify-content-md-center">
 
-					<div class="col-md-6 cos_center">
+					<div class="col-md-6 cos_center" id="ticket">			
+
+
+						<input type="input" class="form__field save_amount" placeholder="輸入存入枚數" name="name" id='name' required />
+						<p  style="font-size: 8px;">我的餘額：<span id="my_balance"></span> ETH</p>	
+
+						<input type="input" class="form__field recommender" placeholder="輸入推薦人地址" name="name" id='name' required />						
 						
 					</div>
 					<div class="col-md-6 cos_center">
+
 						<p> 合約餘額 : <span id="now_balance"></span> ETH</p>
+
+						<p>存入金額: <span id="check_save_amount"></span> ETH</p>
+						<p>我的推薦人 : <span id="check_recommender"></span></p>
+						<p>我將會得到 : <span id="check_get_CT"></span> CT</p>		
+						<p>持有的比例 : <span id="check_hold_rate"></span> </p>
+						<p>初始解約金 : <span id="CT_amount"></span> ETH</p>		
+
+						<button type="button" class="btn btn-primary" id="confirm_invest">存入</button>
+
 					</div>
 
 
@@ -130,7 +153,7 @@
 
 		</section>
 
-		<section>
+		<!-- <section>
 
 			<div class="container">
 
@@ -152,55 +175,11 @@
 			  </div>
 			</div>
 
-		</section>
+		</section> -->
 
 
-		<section class="main_style">
-			
-			<div class="container invest" id="ticket">
-				<div class="input-group mb-3">
-				  <div class="input-group-prepend">
-				   	    <span class="input-group-text" >存入金額</span>
-				  </div>
-				  <input type="text" class="form-control save_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0" >			  
-				</div> 
-				<div class="row justify-content-between">
-					<p>
-					  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-					    填寫推薦人
-					  </a>		  
-					</p>
-					<p class="text-right" style="font-size: 8px;">我的ETH餘額：<span id="my_balance"></span> ETH</p>				
-				</div>
-
-				<div class="collapse" id="collapseExample">
-				  <div class="card card-body" >
-
-				    <div class="input-group">
-					  <div class="input-group-prepend">
-					   	    <span class="input-group-text">推薦人:</span>
-					  </div>
-					  <input type="text" class="form-control recommender" aria-label="Dollar amount (with dot and two decimal places)" placeholder="0x0">
-					</div>
-
-				  </div>
-				</div>
-			</div>	
-
-		</section>
-		
-		<div class="container" id="ticket">
-		    
-			
-			<p>存入金額: <span id="check_save_amount"></span> ETH</p>
-			<p>我的推薦人 : <span id="check_recommender"></span></p>
-			<p>我將會得到 : <span id="CT_amount"></span> CT</p>		
-
-			<button type="button" class="btn btn-primary" id="confirm_invest">存入</button>
-			
-		
-		</div>
-
+	
+	
 
 
 	</section>

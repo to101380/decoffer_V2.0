@@ -1,4 +1,4 @@
- // 將數值計算至小數點後四位
+ // 將數值計算至小數點後四位 
 
 function toPoint_4(point) {
     var str = Number(point).toFixed(4);
@@ -102,7 +102,9 @@ async function SHOW_CONTRACT() {
     var get_CT = await de_coffer.coffer_info(coinbase,5);
     $("#coffer_value").text(ethers.utils.formatUnits(coffer_value));
     $("#earned_bonus").text(ethers.utils.formatUnits(earned_bonus));
+    $("#payable_CT").text(toPoint_4(ethers.utils.formatUnits(get_CT)));
 
+     
     //reaommender_info
     var my_recommender = await de_coffer.recommender(coinbase);
     var RT1 = await de_coffer.recommender_number(coinbase,1);
@@ -119,8 +121,9 @@ async function SHOW_CONTRACT() {
     var destroy = await ct_token.balanceOf("0x0000000000000000000000000000000000000000");   
     var out_share = await de_coffer.get_out_share(); 
     var allowance = await ct_token.allowance(coinbase,decoffer_address);     
-    ct_totalSupply = await ct_token.totalSupply();         
+    ct_totalSupply = await ct_token.totalSupply();             
     $("#CT_balance").text(toPoint_4(ethers.utils.formatUnits(CT_balance)));
+    $("#my_CT").text(toPoint_4(ethers.utils.formatUnits(CT_balance)));
     $("#destroy").text(toPoint_4(ethers.utils.formatUnits(destroy)));
     $("#out_share").text(toPoint_4(out_share/(10**18)));
     $("#hold_rate").text(toPercent(CT_balance/out_share));
@@ -152,6 +155,13 @@ async function SHOW_CONTRACT() {
    
 
     _fine = payable - discount +10000; 
+
+    if(_fine>=0){
+        _fine = payable - discount +10000; 
+    }else{
+        _fine = 0; 
+    }
+
     $("#termination_fee").text(toPoint_8(_fine/(10**18)));
 
     var after_tax_profit = Actual_Profit-(Actual_Profit*profit_rake/1000)

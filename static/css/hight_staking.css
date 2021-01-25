@@ -5,6 +5,12 @@ p{
 	font-size: 13px;
 }
 
+h1{
+	font-family:微軟正黑體;
+	color: #343a40;
+	font-weight: bold;
+}
+
 h3{
 	font-family:微軟正黑體;
 	color: #84959e; 
@@ -19,6 +25,8 @@ h4{
 
 
 h5{
+	font-family:微軟正黑體;
+	font-weight: bold;
 	font-size: 15px;		
 }
 
@@ -28,6 +36,11 @@ a{
 	color: #84959e;  
 	font-size: 13px;	
 
+}
+
+#have_no{
+	color: #d6394c;
+	visibility: hidden; 
 }
 
 .cos_center{	
@@ -43,13 +56,34 @@ a{
     -8px -8px 12px 0 rgba(255, 255, 255, 0.65);
 }
 
-.main_style{
-	background-color:#f2f3f7;
+.main_style{	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction:column;	
-	padding: 30px 0px;
+	padding: 50px 0px;
+}
+
+.info_card{	
+	border-radius: 8px;
+	padding: 30px;
+	background-color: #FFFFFF;
+}
+
+.cos_background{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(68, 134, 170, 0.7)),url(./img/pexels-felix-mittermeier-956981.jpg);
+	position: relative;
+  	height: 450px; 	
+	background-repeat: no-repeat;
+	background-position: center;  
+  	background-size: cover;
+  	background-color: #f1f1f1;  	
+  	background-attachment: fixed;
+
+	  -webkit-background-size: cover !important; 
+	  -moz-background-size: cover !important; 
+	  -o-background-size: cover;    
+	  z-index: -1;
 }
 
 .cos_footer{
@@ -58,4 +92,101 @@ a{
 	justify-content: center;
 	align-items: center;	
 	padding: 30px; 	
+
+}
+
+
+
+/*input_style*/
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
 }

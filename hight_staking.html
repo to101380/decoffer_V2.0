@@ -39,7 +39,7 @@
 		        <a class="nav-link" href="./credit.html"> 借貸 </a>
 		      </li>		      
 		      <li class="nav-item">
-		        <a class="nav-link" href="./staking_pool.html"> 質押 </a>
+		        <a class="nav-link" href="./hight_staking.html"> 質押 </a>
 		      </li>	
 		      <li class="nav-item">
 		        <a class="nav-link" href="./insurance.html"> 保險 </a>
@@ -48,46 +48,112 @@
 		  </div>
 		</div>
 	</nav>
-	
 
-	<section class="main_style">
+	<div class=" cos_center cos_background ">
 
-		<p>我的地址 : <span id="my_address"></span> </p>
-		<p>我的餘額 : <span id="my_balance"></span> </p>
+	  <img src="./static/css/img/credit_mine.png" width="100" height="100" >	
+	  <h3 style="color: #FFFFFF; margin: 8px;">質押挖礦</h3>
+	  <p class="lead" style="color: #FFFFFF"> 風險不高，獲利不少。</p>
+	  <p style="color: #FFFFFF; font-size: 20px;">1 Credit Mine : 0.00215 ETH</p>
+	  <p style="color: #FFFFFF; font-size: 20px;">1 Credit Mine = 0.0003% 算力</p> 
+	  
+	</div>
 
-		<p>我投入的資金 : <span id="staking_value"></span> ETH</p>
-		<p>扣除權重 : <span id="loss_weight"></span> </p>
-		<p>我提供的動力比例 : <span id="hold_rate"></span></p>
-		<p>代幣 : <span id="get_token"></span> </p>
-		<p>挖礦獲利 : <span id="profit"></span> ETH</p>		
-		<p>推薦獎金 : <span id="bonus"></span> </p>
-		<p>我的推薦人 : <span id="RT"></span> </p>
-		<p>我推薦人數 : <span id="RTn"></span> </p>
-		<p>碎礦: <span id="fragments"></span> </p>
-	
+
+	<section class="main_style" style="background-color:#f2f3f7;">
+
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-6 cos_center">
+		      
+		      <div class="info_card  shadow-sm p-3 mb-5">
+		      	  
+		      	  <h5>我提供的算力 : </h5>		      	  
+		      	  <h3 class="text-center" style="margin:50px;"><span id="hold_rate"></span></h3>
+		      	  <hr>		      	  
+		      	  <p>我的 Credit Mine : <span id="cm_balance"></span> CM</p>
+		      	  
+
+		      </div>
+
+		    </div>
+		    <div class="col-md-6 cos_center ">
+
+		      <div class="info_card  shadow-sm p-3 mb-5">
+
+		      	  <h5>獲利 : </h5>
+		      	  <h3 class="text-center" style="margin:50px;"><span id="profit"></span> ETH</h3>
+		      	  <hr>
+		      	  <p>我投入的資金 : <span id="staking_value"></span> ETH</p>
+
+		      </div>
+
+		      
+		    </div>
+		  </div>		  
+		</div>
+
 	</section>
+	<section class="main_style">
+		<h1> 申購算力</h1>
+		<div class="container" style="margin-top: 35px;">
+		  <div class="row">
+		    <div class="col-md-6 cos_center ">
+		      
+		        <div class="info_card" id="create_staking">
+
+			     	<div class="group">      
+				      <input type="text" class="staking_amount" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <p>我的餘額 : <span id="my_balance"></span> <span id="have_no">餘額不足</span></p>					      		     
+				      <label>ETH</label>
+				    </div>	
+
+
+				    <div class="group">      
+				      <input type="text" class="recommender" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>推薦人地址</label>
+				    </div>	
+
+			    </div>   	   
+		      	  
+
+		    </div>
+		    <div class="col-md-6 cos_center">
+
+		    	<div class="info_card shadow-none p-3 mb-5 bg-light rounded" style="width: 300px;">
+		    		<h4>申購資訊</h4>
+		    		<hr>	
+			     	<p>投入金額 : <span id="check_save_amount"></span> </p>					
+					<p>貢獻算力 : <span id="check_power_rate"></span></p>
+					<P>CM枚數 : <span id="check_cm_amount"></span></P>
+					<p>我推薦人 : <span id="check_recommender"></span> </p>
+					<div class="cos_center justify-content-around">
+						<button id="confirm_staking" type="button" class="btn btn-dark btn-sm"  style="margin: 30px 2px;" >建立</button>	
+					</div>		    	
+
+			    </div>		      
+
+		      
+		    </div>
+		  </div>		  
+		</div>
+
+
+		
+	</section>	
+
+
 	<section>
 		
-		<div class="container invest" id="create_staking">
-			<div class="input-group mb-3">
-			  <div class="input-group-prepend">
-			   	    <span class="input-group-text">存入金額</span>
-			  </div>
-			  <input type="text" class="form-control staking_amount"  aria-label="Dollar amount (with dot and two decimal places)" placeholder="0.0">			  
-			</div> 			
 
-			<div class="input-group">
-			  <div class="input-group-prepend">
-			   	    <span class="input-group-text">推薦人:</span>
-			  </div>
-			  <input type="text" class="form-control recommender" aria-label="Dollar amount (with dot and two decimal places)" placeholder="0x0">
-			</div>
-		</div>	
 
-		<p>投入金額: <span id="check_save_amount"></span> </p>
-		<p>我推薦人 : <span id="check_recommender"></span> </p>
-		<button id="confirm_staking" type="button" class="btn btn-dark"  style="margin: 30px 2px;" >建立</button>
-		<button type="button" class="btn btn-dark" onclick="dt_approve();" style="margin: 30px 2px;" >approve</button>
+		
+		<button type="button" class="btn btn-dark" onclick="cm_approve();" style="margin: 30px 2px;" >approve</button>
+		<button id="confirm_withdraw" type="button" class="btn btn-dark" style="margin: 30px 2px;" >提領</button>
 
 	</section>
 

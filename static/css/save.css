@@ -2,7 +2,7 @@
 *{
 	  /*font-family:微軟正黑體;*/
 /*	  border: solid black 1px ;	  */
-} 
+}  
 
 p{
 	font-family:微軟正黑體;
@@ -28,6 +28,12 @@ a{
 
 } 
 
+
+input{
+
+  
+}
+
 #withdraw_btn{
   display: none;
 }
@@ -38,6 +44,11 @@ a{
 }
 
 
+/*#save-story{
+  display: none;
+}
+
+*/
 .main_style{
   background-color:#f2f3f7;
   display: flex;
@@ -47,9 +58,6 @@ a{
   padding: 30px 0px;
 }
 
-#save-story{
-  display: none;
-}
 
 
 .drop-shadow {
@@ -203,6 +211,22 @@ a{
   }
 
 }*/
+
+
+.form__field {
+
+  font-family: inherit;
+  width: 50%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;  
+  padding: 7px 0;
+ 
+}
+
+
+
 
 
 
