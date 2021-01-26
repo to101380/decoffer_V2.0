@@ -43,6 +43,31 @@ a{
 	visibility: hidden; 
 }
 
+.subscribe p{
+	color: #343a40;
+	font-size: 15px;
+}
+
+.status{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #49b782;	
+	margin: 8px;
+    box-shadow: 2px 2px 2px 0 rgba(73, 183, 130, 0.75);
+    
+}
+
+
+.my_address{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	border-radius: 30px;	
+	padding: 8px;
+	margin: 12px;
+}
+
 .cos_center{	
 	display: flex;
 	justify-content: center;
@@ -69,6 +94,7 @@ a{
 	padding: 30px;
 	background-color: #FFFFFF;
 }
+
 
 .cos_background{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(68, 134, 170, 0.7)),url(./img/pexels-felix-mittermeier-956981.jpg);

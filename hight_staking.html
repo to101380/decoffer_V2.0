@@ -86,6 +86,15 @@
 		      	  <hr>
 		      	  <p>我投入的資金 : <span id="staking_value"></span> ETH</p>
 
+		      	  
+	      	  	  <div class="row justify-content-around">
+			      	  <button type="button" class="btn btn-dark btn-sm" onclick="cm_approve();">approve</button>
+			      	  <button id="confirm_withdraw" type="button" class="btn btn-dark btn-sm" >提領</button>
+			      	  <button id="confirm_withdraw" type="button" class="btn btn-dark btn-sm disabled" >提領</button>
+		      	  </div>
+		      	
+
+
 		      </div>
 
 		      
@@ -94,8 +103,13 @@
 		</div>
 
 	</section>
+
 	<section class="main_style" style="background-color: #FFFFFF;">
 		<h1> 申購算力</h1>
+		<div class=" row justify-content-between my_address cos_shadow">
+		    <div class="status"></div>
+		    <div style="margin-right:8px;"><span id="my_address"></span></div>
+		</div>
 		<div class="container" style="margin-top: 35px;">
 		  <div class="row">
 		    <div class="col-md-6 cos_center ">
@@ -125,16 +139,22 @@
 		    </div>
 		    <div class="col-md-6 cos_center">
 
-		    	<div class="info_card shadow-none p-3 mb-5 bg-light rounded" style="width: 300px;">
-		    		<h4>申購資訊</h4>
-		    		<hr>	
-			     	<p>投入金額 : <span id="check_save_amount"></span> </p>					
+		    	<div class="info_card subscribe" style="width: 300px; background-color:#f2f3f7;">
+		    		<h4 class="text-center" style="color: #ff5236;">申購資訊</h4>
+
+		    		
+		    		<div class="cos_center" style="margin: 30px;">
+		    			<img src="./static/css/img/credit_mine.png" width="60" height="60">	
+		    		</div>
+		    		
+				    <p>投入金額 : <span id="check_save_amount"></span> ETH</p>					
 					<p>貢獻算力 : <span id="check_power_rate"></span></p>
-					<P>CM枚數 : <span id="check_cm_amount"></span></P>
+					<P>CM枚數 : <span id="check_cm_amount"></span> CM</P>
 					<p>我推薦人 : <span id="check_recommender"></span> </p>
-					<div class="cos_center justify-content-around">
+
+					<div class="cos_center">
 						<button id="confirm_staking" type="button" class="btn btn-dark btn-sm"  style="margin: 30px 2px;" >申購</button>	
-					</div>		    	
+					</div>	    	
 
 			    </div>		      
 
@@ -147,16 +167,6 @@
 		
 	</section>	
 
-
-	<section style="background-color: #FFFFFF;">
-		
-
-
-		
-		<button type="button" class="btn btn-dark" onclick="cm_approve();" style="margin: 30px 2px;" >approve</button>
-		<button id="confirm_withdraw" type="button" class="btn btn-dark" style="margin: 30px 2px;" >提領</button>
-
-	</section>
 
 	<footer class="cos_center">
 		<div class="container-fluid cos_footer">
