@@ -129,7 +129,7 @@ async function SHOW_CONTRACT() {
     
     
     var CT_per = profit/out_share;
-    var power_per = my_cm/out_share;   
+    var power_per = 1*10**18/out_share;
     $("#CT_per").text(toPoint_8(CT_per));
     $("#power_per").text(toPercent(power_per));
 
@@ -189,8 +189,15 @@ async function SHOW_CONTRACT() {
 
 
     const set_withdraw = () => {
-        var withdraw = $("#withdraw_staking .withdraw_amount").val();
-        $("#withdraw_amount").text(withdraw);
+        var withdraw_cm = $("#withdraw_staking .withdraw_amount").val();
+        $("#withdraw_amount").text(withdraw_cm);
+
+        var sell_power = withdraw_cm*10**18/out_share;
+        $("#sell_power").text(toPercent(sell_power));
+
+        var aa =CT_per*withdraw_cm;
+        $("#getETH_amount").text(aa);
+
     };
 
 
