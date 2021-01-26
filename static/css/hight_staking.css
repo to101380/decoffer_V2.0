@@ -43,6 +43,16 @@ a{
 	visibility: hidden; 
 }
 
+#not_length{
+	display: none;
+}
+
+#not_self{
+	display: none;
+}
+
+
+
 .subscribe p{
 	color: #343a40;
 	font-size: 15px;

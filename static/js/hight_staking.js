@@ -34,7 +34,8 @@ var CT_staking;
 var cm_token;
 var coinbase;
 var cm_price;
-var out_share
+var out_share;
+var owner;
 
 async function SHOW_CONTRACT() {
     // 確認是否有window.ethereum
@@ -71,11 +72,11 @@ async function SHOW_CONTRACT() {
     CT_staking = new ethers.Contract( CT_staking_address, CT_staking_abi, signer);
     cm_token = new ethers.Contract(cm_address, cm_abi, signer);
     
-
+    
 
     
 
-    var owner = await CT_staking.owner();
+    owner = await CT_staking.owner();
 
 
     // fee
@@ -148,8 +149,24 @@ async function SHOW_CONTRACT() {
 
         var hidden_str = (recommender.substring(6,38));
         var replace_part = recommender.replace(hidden_str,"...");
+        $("#check_recommender").text(replace_part); 
 
-        $("#check_recommender").text(replace_part);  
+        recommender == null || recommender == undefined || recommender == ''
+
+
+
+        if(recommender == null || recommender == undefined || recommender == ''){
+           $("#not_length").css("display","none");  
+           $("#not_self").css("display","none");    
+        }else if(recommender.length < 42){
+           $("#not_length").css("display","block");       
+        }else if(recommender == coinbase){
+           $("#not_self").css("display","block");
+        }else{
+           $("#not_self").css("display","none");
+           $("#not_length").css("display","none"); 
+        }
+
 
 
     };
@@ -188,8 +205,13 @@ confirm_staking.addEventListener("click", async (e) => {
     let overrides = {        
         value: ethers.utils.parseEther(amount)     // ether in this case MUST be a string       
     };
-   
-    _staking_coffer(recommender,overrides);
+    
+    if (recommender == null || recommender == undefined || recommender == '') {
+        _staking_coffer(recommender,overrides);
+    }else{
+        _staking_coffer(recommender,overrides);
+    }
+    
    
 });
 
