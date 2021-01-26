@@ -55,6 +55,10 @@ a{
 	display: none;
 }
 
+#confirm_withdraw{
+	display: none;
+}
+
 
 .subscribe p{
 	color: #343a40;

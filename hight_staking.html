@@ -53,8 +53,9 @@
 
 	  <img src="./static/css/img/credit_mine.png" width="100" height="100" >	
 	  <h3 style="color: #FFFFFF; margin: 8px;">質押挖礦</h3>
-	  <p class="lead" style="color: #FFFFFF"> 風險不高，獲利不少。</p>
-	  <p style="color: #FFFFFF"> 挖礦獲利總額 : <span id="total_profit"></span> ETH</p>
+	  <p style="color: #FFFFFF;"> 風險不高，獲利不少</p>
+	  <p class="lead"style="color: #FFFFFF"> 累積獲利 : <span id="total_profit"></span> ETH</p>
+	  <p class="lead"style="color: #FFFFFF"> 當前獲利 : <span id="currently_profit"></span> ETH</p>
 	  
 	  
 	</div>
@@ -88,10 +89,12 @@
 
 		      	  
 	      	  	  <div class="row justify-content-around">
-			      	  <button type="button" class="btn btn-dark btn-sm" onclick="cm_approve();">approve</button>
-			      	  <button id="confirm_withdraw" type="button" class="btn btn-dark btn-sm" >提領</button>
-			      	  <button id="confirm_withdraw" type="button" class="btn btn-dark btn-sm disabled" >提領</button>
+			      	  <button id="approve" type="button" class="btn btn-dark btn-sm" onclick="cm_approve();">approve</button>
+			      	  <button id="confirm_withdraw" type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#withdraw" >提領</button>
+			      	  <button id="diswithdraw" type="button" class="btn btn-dark btn-sm disabled" >提領</button>
 		      	  </div>
+		      	  <!-- Button trigger modal -->
+
 		      	
 
 
@@ -112,8 +115,8 @@
 		</div>
 
 		
-		<p>1 Credit Mine : 0.00215 ETH</p>
-  		<p>1 Credit Mine = 0.0003% 算力</p>
+		<p>1 Credit Mine : <span id="CT_per"></span> ETH </p>
+  		<p>1 Credit Mine : <span id="power_per"></span> 算力</p>
 	  	
 
 		<div class="container" style="margin-top: 35px;">
@@ -161,7 +164,7 @@
 				    <p>投入金額 : <span id="check_save_amount"></span> ETH</p>					
 					<p>貢獻算力 : <span id="check_power_rate"></span></p>
 					<P>CM枚數 : <span id="check_cm_amount"></span> CM</P>
-					<p>我推薦人 : <span id="check_recommender"></span> </p>
+					<p>我推薦人 : <span id="check_recommender"></span> </p>					
 
 					<div class="cos_center">
 						<button id="confirm_staking" type="button" class="btn btn-dark btn-sm"  style="margin: 30px 2px;" >確定申購</button>	
@@ -187,6 +190,40 @@
 	</footer>
 
 	<!-- 彈跳提示窗 -->
+	<div class="modal fade" id="withdraw" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalCenterTitle">提領</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body cos_center">
+
+
+	      	<div id="withdraw_staking">
+
+
+		     	<div class="group">      
+			      <input type="text" class="withdraw_amount" required>
+			      <span class="highlight"></span>
+			      <span class="bar"></span>
+			      <p>我的CM餘額 : <span id="myCM_balance"></span></p>				      						      		     
+			      <label>Credit mine (CM)</label>
+			    </div>		
+			    <p>提領金額 : <span id="withdraw_amount"></span></p>		   
+
+			</div> 
+	        
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+	        <button type="button" class="btn btn-primary">確定提領</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	
 
 	<html> 

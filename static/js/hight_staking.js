@@ -80,7 +80,8 @@ async function SHOW_CONTRACT() {
 
 
     // fee
-    var minimum = await CT_staking.fee_info(1,1);  
+    var minimum = await CT_staking.fee_info(1,1); 
+    var fee = await CT_staking.fee_info(1,2); 
     var RT_01 = await CT_staking.fee_info(2,1); 
     var RT_02 = await CT_staking.fee_info(2,2); 
     var RT_03 = await CT_staking.fee_info(2,3); 
@@ -88,12 +89,8 @@ async function SHOW_CONTRACT() {
     
 
     //staking_info
-    var staking_value = await CT_staking.staking_info(coinbase,1);  
-    var loss_weight = await CT_staking.staking_info(coinbase,2);  
-    var bonus = await CT_staking.staking_info(coinbase,4); 
+    var staking_value = await CT_staking.staking_info(coinbase,1); 
     $("#staking_value").text(ethers.utils.formatUnits(staking_value));
-    $("#loss_weight").text(ethers.utils.formatUnits(loss_weight));
-    $("#bonus").text(ethers.utils.formatUnits(bonus));
 
     //reaommender_info
     var my_recommender = await CT_staking.recommender(coinbase);
@@ -107,22 +104,34 @@ async function SHOW_CONTRACT() {
     $("#RT").text(replace_part);
 
     //cm_info    
-    out_share = await cm_token.totalSupply(); 
+    out_share = await cm_token.totalSupply();     
     var my_cm = await cm_token.balanceOf(coinbase); 
     var hold_rate = my_cm/out_share; 
-    $("#cm_balance").text(my_cm/10**18);
+    var allowance = await cm_token.allowance(coinbase,CT_staking_address);  
+
+    $("#cm_balance").text(toPoint_4(my_cm/10**18));
+    $("#myCM_balance").text(toPoint_4(my_cm/10**18));
     $("#hold_rate").text(toPercent(hold_rate));
+    if(allowance != 0){
+        $("#approve").css("display","none");
+        $("#diswithdraw").css("display","none");
+        $("#confirm_withdraw").css("display","block");
+    }
 
     
 
     
-  
+    
     var profit = await CT_staking.get_profit();  
-    var my_profit = Math.floor(profit*hold_rate)-loss_weight;     
+    var my_profit = Math.floor(profit*hold_rate);     
     $("#profit").text(toPoint_4(my_profit/10**18));
+    $("#currently_profit").text(toPoint_4(profit/10**18))
     
-    cm_amount = 1*10**18*out_share/(liquid+profit);
-
+    
+    var CT_per = profit/out_share;
+    var power_per = my_cm/out_share;   
+    $("#CT_per").text(toPoint_8(CT_per));
+    $("#power_per").text(toPercent(power_per));
 
 
 
@@ -130,14 +139,23 @@ async function SHOW_CONTRACT() {
         var save_amount = $("#create_staking .staking_amount").val();        
         $("#check_save_amount").text(save_amount);
 
-      
+        var get_amount =  save_amount*Number(out_share)/(Number(liquid)+Number(profit));
+        var cost = get_amount*(Number(RT_01)+Number(RT_02)+Number(RT_03))/1000;
+        var actul_amount = get_amount-cost;    
+        $("#check_cm_amount").text(toPoint_6(actul_amount));    
 
+        var check_hold_rate = toPercent(actul_amount*10**18/out_share);        
+        $("#check_power_rate").text(check_hold_rate);
+
+        //檢視餘額是否足夠
         if (Number(save_amount) > Number(simple_balance)) {
             $("#have_no").css("visibility","visible");
         }else{
             $("#have_no").css("visibility","hidden");
         }
 
+
+        
 
 
     };
@@ -171,7 +189,7 @@ async function SHOW_CONTRACT() {
 
 
     const set_withdraw = () => {
-        var withdraw = $("#create_staking .withdraw").val();
+        var withdraw = $("#withdraw_staking .withdraw_amount").val();
         $("#withdraw_amount").text(withdraw);
     };
 
@@ -186,7 +204,7 @@ async function SHOW_CONTRACT() {
 
     $("#create_staking").on("keyup", ".staking_amount", set_staking_amount);
     $("#create_staking").on("keyup", ".recommender", set_recommender);
-    $("#create_staking").on("keyup", ".withdraw", set_withdraw);
+    $("#withdraw_staking").on("keyup", ".withdraw_amount", set_withdraw);
   
 
     
@@ -206,7 +224,7 @@ confirm_staking.addEventListener("click", async (e) => {
     };
     
     if (recommender == null || recommender == undefined || recommender == '') {
-        _staking_coffer(recommender,overrides);
+        _staking_coffer(owner,overrides);
     }else{
         _staking_coffer(recommender,overrides);
     }
