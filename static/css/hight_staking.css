@@ -1,3 +1,10 @@
+*{
+    /*font-family:微軟正黑體;*/
+    /*border: solid black 1px ;*/	  
+} 
+
+
+
 p{
 	font-family:微軟正黑體;
 	font-weight: bold;	
@@ -14,6 +21,7 @@ h1{
 h3{
 	font-family:微軟正黑體;
 	color: #84959e; 
+	font-size: 18px;
 }
 
 h4{
@@ -40,7 +48,12 @@ a{
 
 #have_no{
 	color: #d6394c;
-	visibility: hidden; 
+	display: none; 
+}
+
+#last{
+	color: #d6394c;
+	display: none; 
 }
 
 #not_length{
@@ -56,6 +69,10 @@ a{
 }
 
 #confirm_withdraw{
+	display: none;
+}
+
+#approve_withdraw{
 	display: none;
 }
 
@@ -108,6 +125,7 @@ a{
 }
 
 .info_card{	
+	width: 300px;
 	border-radius: 8px;
 	padding: 30px;
 	background-color: #FFFFFF;

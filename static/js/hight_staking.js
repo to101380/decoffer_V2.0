@@ -54,6 +54,7 @@ async function SHOW_CONTRACT() {
     var hidden_str = (coinbase.substring(6,38));
     var replace_part = coinbase.replace(hidden_str,"...");            
     $("#my_address").text(replace_part);
+    $("#check_address").text(replace_part);
    
 
     // 取得帳號餘額
@@ -64,9 +65,9 @@ async function SHOW_CONTRACT() {
   
 
     // 建立合約
-    CT_staking_address = "0x431457e417178e58162d8F8059cE22CaFd28Ad03";
-    var CT_staking_abi = [{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"staking_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"get_profit","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_cm","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"total_supply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"p1","type":"uint256"},{"name":"p2","type":"uint256"},{"name":"p3","type":"uint256"}],"name":"set_fee","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"fee_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"recommender","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"recommender_number","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"authorize","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_recommender","type":"address"}],"name":"staking","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"cancel_authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"input","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
-    var cm_address = "0xa17E60F4f0A5b952f297988e4b483B9906067e56";
+    CT_staking_address = "0xf8E91258a8bf8a3c90B43A2b98E1F630aD71Fd10";
+    var CT_staking_abi = [{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"staking_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"get_profit","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_cm","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"total_supply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"totalprofit","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"p1","type":"uint256"},{"name":"p2","type":"uint256"},{"name":"p3","type":"uint256"}],"name":"set_fee","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"fee_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"recommender","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"recommender_number","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"authorize","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_recommender","type":"address"}],"name":"staking","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"cancel_authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"input","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
+    var cm_address = "0xA8eb37CcBFB3d34d334E0e16b03FD2519D67d8C5";
     var cm_abi = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"acceptOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"},{"name":"data","type":"bytes"}],"name":"approveAndCall","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"newOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tokenAddress","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferAnyERC20Token","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenOwner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Approval","type":"event"}]
     
     CT_staking = new ethers.Contract( CT_staking_address, CT_staking_abi, signer);
@@ -86,6 +87,9 @@ async function SHOW_CONTRACT() {
     var RT_02 = await CT_staking.fee_info(2,2); 
     var RT_03 = await CT_staking.fee_info(2,3); 
     var liquid = await CT_staking.fee_info(3,1); 
+    var totalprofit = await CT_staking.totalprofit();
+    $("#totalprofit").text(ethers.utils.formatUnits(totalprofit));
+    $("#last_amount").text(ethers.utils.formatUnits(minimum));
     
 
     //staking_info
@@ -97,7 +101,7 @@ async function SHOW_CONTRACT() {
     var RT1 = await CT_staking.recommender_number(coinbase,1);
     var RT2 = await CT_staking.recommender_number(coinbase,2); 
     var RT3 = await CT_staking.recommender_number(coinbase,2);    
-    $("#RTn").text(Number(RT1)+Number(RT2)+Number(RT2));
+    $("#RT_count").text(Number(RT1)+Number(RT2)+Number(RT2));
 
     var hidden_str = (my_recommender.substring(6,38));
     var replace_part = my_recommender.replace(hidden_str,"...");            
@@ -115,7 +119,7 @@ async function SHOW_CONTRACT() {
     if(allowance != 0){
         $("#approve").css("display","none");
         $("#diswithdraw").css("display","none");
-        $("#confirm_withdraw").css("display","block");
+        $("#approve_withdraw").css("display","block");
     }
 
     
@@ -125,7 +129,7 @@ async function SHOW_CONTRACT() {
     var profit = await CT_staking.get_profit();  
     var my_profit = Math.floor(profit*hold_rate);     
     $("#profit").text(toPoint_4(my_profit/10**18));
-    $("#currently_profit").text(toPoint_4(profit/10**18))
+    $("#currently_profit").text(ethers.utils.formatUnits(profit));
     
     
     var CT_per = profit/out_share;
@@ -149,11 +153,19 @@ async function SHOW_CONTRACT() {
 
         //檢視餘額是否足夠
         if (Number(save_amount) > Number(simple_balance)) {
-            $("#have_no").css("visibility","visible");
+            $("#have_no").css("display","block");
         }else{
-            $("#have_no").css("visibility","hidden");
+            $("#have_no").css("display","none");
         }
 
+        //檢視是否大於最低投入金額
+        if (Number(save_amount) < Number(ethers.utils.formatUnits(minimum))) {
+            $("#last").css("display","block");
+        }else if(save_amount == null || save_amount == undefined || save_amount == ''){
+            $("#last").css("display","none");
+        }else if(Number(save_amount) > Number(ethers.utils.formatUnits(minimum))){
+            $("#last").css("display","none");
+        };
 
         
 
@@ -195,8 +207,8 @@ async function SHOW_CONTRACT() {
         var sell_power = withdraw_cm*10**18/out_share;
         $("#sell_power").text(toPercent(sell_power));
 
-        var aa =CT_per*withdraw_cm;
-        $("#getETH_amount").text(aa);
+        var get_ETH =CT_per*withdraw_cm;
+        $("#getETH_amount").text(toPoint_4(get_ETH));
 
     };
 
@@ -212,6 +224,18 @@ async function SHOW_CONTRACT() {
     $("#create_staking").on("keyup", ".staking_amount", set_staking_amount);
     $("#create_staking").on("keyup", ".recommender", set_recommender);
     $("#withdraw_staking").on("keyup", ".withdraw_amount", set_withdraw);
+
+
+    
+    function contract_link() {
+
+        var name = "歷史紀錄";   
+        var result = name.link("https://rinkeby.etherscan.io/token/"+cm_address+"?a="+coinbase); 
+        document.getElementById("smart_contract").innerHTML = result;
+       
+    }
+
+    contract_link();
   
 
     
@@ -245,8 +269,9 @@ var confirm_withdraw = document.querySelector("#confirm_withdraw");
 confirm_withdraw.addEventListener("click", async (e) => {
     e.preventDefault();
 
-
-   
+    var cm_amount = document.querySelector(".withdraw_amount").value;
+    cm_amount = (Number(cm_amount*10**18)).toString();    
+    
     withdraw(cm_amount);
 
    
@@ -284,3 +309,6 @@ function withdraw(cm_amount){
                  
       
 }
+
+
+
