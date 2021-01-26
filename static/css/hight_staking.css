@@ -51,6 +51,9 @@ a{
 	display: none;
 }
 
+#not_recommender{
+	display: none;
+}
 
 
 .subscribe p{
@@ -76,6 +79,7 @@ a{
 	border-radius: 30px;	
 	padding: 8px;
 	margin: 12px;
+	margin-bottom:32px;
 }
 
 .cos_center{	

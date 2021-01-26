@@ -149,9 +149,7 @@ async function SHOW_CONTRACT() {
 
         var hidden_str = (recommender.substring(6,38));
         var replace_part = recommender.replace(hidden_str,"...");
-        $("#check_recommender").text(replace_part); 
-
-        recommender == null || recommender == undefined || recommender == ''
+        $("#check_recommender").text(replace_part);       
 
 
 
@@ -168,8 +166,9 @@ async function SHOW_CONTRACT() {
         }
 
 
-
     };
+
+
 
     const set_withdraw = () => {
         var withdraw = $("#create_staking .withdraw").val();
