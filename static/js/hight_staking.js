@@ -65,9 +65,9 @@ async function SHOW_CONTRACT() {
   
 
     // 建立合約
-    CT_staking_address = "0xf8E91258a8bf8a3c90B43A2b98E1F630aD71Fd10";
+    CT_staking_address = "0xf55bd5B3356c4EE1D13d69cE1f8B3Cbd27D4FdE1";
     var CT_staking_abi = [{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"staking_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"get_profit","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_cm","type":"uint256"}],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"total_supply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"totalprofit","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"p1","type":"uint256"},{"name":"p2","type":"uint256"},{"name":"p3","type":"uint256"}],"name":"set_fee","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"fee_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"recommender","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"recommender_number","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"authorize","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_recommender","type":"address"}],"name":"staking","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"cancel_authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"input","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
-    var cm_address = "0xA8eb37CcBFB3d34d334E0e16b03FD2519D67d8C5";
+    var cm_address = "0x5E0435d2D288942a7817EB054A0d5937230a939C";
     var cm_abi = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"acceptOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"},{"name":"data","type":"bytes"}],"name":"approveAndCall","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"newOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tokenAddress","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferAnyERC20Token","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenOwner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Approval","type":"event"}]
     
     CT_staking = new ethers.Contract( CT_staking_address, CT_staking_abi, signer);
@@ -88,20 +88,25 @@ async function SHOW_CONTRACT() {
     var RT_03 = await CT_staking.fee_info(2,3); 
     var liquid = await CT_staking.fee_info(3,1); 
     var totalprofit = await CT_staking.totalprofit();
-    $("#totalprofit").text(ethers.utils.formatUnits(totalprofit));
+    totalprofit =  toPoint_8(ethers.utils.formatUnits(totalprofit));
+    $("#totalprofit").text(totalprofit);
     $("#last_amount").text(ethers.utils.formatUnits(minimum));
     
 
     //staking_info
     var staking_value = await CT_staking.staking_info(coinbase,1); 
+    var withdraw_value = await CT_staking.staking_info(coinbase,2);
     $("#staking_value").text(ethers.utils.formatUnits(staking_value));
+    $("#withdraw_value").text(ethers.utils.formatUnits(withdraw_value));
 
     //reaommender_info
     var my_recommender = await CT_staking.recommender(coinbase);
     var RT1 = await CT_staking.recommender_number(coinbase,1);
     var RT2 = await CT_staking.recommender_number(coinbase,2); 
     var RT3 = await CT_staking.recommender_number(coinbase,2);    
-    $("#RT_count").text(Number(RT1)+Number(RT2)+Number(RT2));
+    $("#RT1").text(RT1);
+    $("#RT2").text(RT2);
+    $("#RT3").text(RT3);
 
     var hidden_str = (my_recommender.substring(6,38));
     var replace_part = my_recommender.replace(hidden_str,"...");            
@@ -129,7 +134,7 @@ async function SHOW_CONTRACT() {
     var profit = await CT_staking.get_profit();  
     var my_profit = Math.floor(profit*hold_rate);     
     $("#profit").text(toPoint_4(my_profit/10**18));
-    $("#currently_profit").text(ethers.utils.formatUnits(profit));
+    $("#currently_profit").text(toPoint_8(ethers.utils.formatUnits(profit)));
     
     
     var CT_per = profit/out_share;
@@ -159,18 +164,19 @@ async function SHOW_CONTRACT() {
         }
 
         //檢視是否大於最低投入金額
-        if (Number(save_amount) < Number(ethers.utils.formatUnits(minimum))) {
+        if (save_amount == null || save_amount == undefined || save_amount == ''){
+            $("#last").css("display","none");
+        }else if(Number(save_amount) < Number(ethers.utils.formatUnits(minimum))){
             $("#last").css("display","block");
-        }else if(save_amount == null || save_amount == undefined || save_amount == ''){
+        }else if(Number(save_amount) >= Number(ethers.utils.formatUnits(minimum))){
             $("#last").css("display","none");
-        }else if(Number(save_amount) > Number(ethers.utils.formatUnits(minimum))){
-            $("#last").css("display","none");
-        };
+        }
 
-        
 
 
     };
+
+
 
 
     const set_recommender = () => {
@@ -179,24 +185,41 @@ async function SHOW_CONTRACT() {
 
         var hidden_str = (recommender.substring(6,38));
         var replace_part = recommender.replace(hidden_str,"...");
-        $("#check_recommender").text(replace_part);       
+        $("#check_recommender").text(replace_part);    
 
 
 
+        if(recommender.length < 42){
+            $("#not_length").css("display","block");
+        }else{
+            $("#not_length").css("display","none");
+        }
+
+        
         if(recommender == null || recommender == undefined || recommender == ''){
            $("#not_length").css("display","none");  
            $("#not_self").css("display","none");    
-        }else if(recommender.length < 42){
-           $("#not_length").css("display","block");       
-        }else if(recommender == coinbase){
-           $("#not_self").css("display","block");
-        }else{
-           $("#not_self").css("display","none");
-           $("#not_length").css("display","none"); 
         }
 
 
+
+        if(recommender == coinbase){
+           $("#not_self").css("display","block");
+        }else{
+           $("#not_self").css("display","none");           
+        }
+
+        if(recommender == null || recommender == undefined || recommender == '' || recommender == owner){
+            
+           
+        }
+        
+
+
+
     };
+
+
 
 
 
