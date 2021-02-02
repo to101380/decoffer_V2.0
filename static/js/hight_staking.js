@@ -207,12 +207,7 @@ async function SHOW_CONTRACT() {
            $("#not_self").css("display","block");
         }else{
            $("#not_self").css("display","none");           
-        }
-
-        if(recommender == null || recommender == undefined || recommender == '' || recommender == owner){
-            
-           
-        }
+        }        
         
 
 

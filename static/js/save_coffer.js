@@ -211,6 +211,36 @@ async function SHOW_CONTRACT() {
     const set_recommender = () => {
         var recommender = $("#ticket .recommender").val();
         $("#check_recommender").text(recommender);
+
+
+        var hidden_str = (recommender.substring(6,38));
+        var replace_part = recommender.replace(hidden_str,"...");
+        $("#check_recommender").text(replace_part);    
+
+
+
+        if(recommender.length < 42){
+            $("#not_length").css("display","block");
+        }else{
+            $("#not_length").css("display","none");
+        }
+
+        
+        if(recommender == null || recommender == undefined || recommender == ''){
+           $("#not_length").css("display","none");  
+           $("#not_self").css("display","none");    
+        }
+
+
+
+        if(recommender == coinbase){
+           $("#not_self").css("display","block");
+        }else{
+           $("#not_self").css("display","none");           
+        }
+
+      
+
     };
 
 
