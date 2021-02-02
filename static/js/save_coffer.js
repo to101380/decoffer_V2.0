@@ -1,4 +1,14 @@
- // 將數值計算至小數點後四位 
+
+
+
+
+// 將數值計算至小數點後四位
+
+function toPoint_2(point) {
+    var str = Number(point).toFixed(2);
+    return str;
+}
+
 
 function toPoint_4(point) {
     var str = Number(point).toFixed(4);
@@ -104,6 +114,9 @@ async function SHOW_CONTRACT() {
     $("#earned_bonus").text(ethers.utils.formatUnits(earned_bonus));
     $("#payable_CT").text(toPoint_4(ethers.utils.formatUnits(get_CT)));
 
+
+
+
      
     //reaommender_info
     var my_recommender = await de_coffer.recommender(coinbase);
@@ -135,7 +148,7 @@ async function SHOW_CONTRACT() {
     }
 
     var CT_price = now_balance/out_share;       
-    $("#ct_price").text(CT_price);
+    $("#ct_price").text(toPoint_8(CT_price));
 
     
     // withdraw line
@@ -210,6 +223,26 @@ async function SHOW_CONTRACT() {
 
     $("#ticket").on("keyup", ".save_amount", set_save_amount);
     $("#ticket").on("keyup", ".recommender", set_recommender);
+
+
+
+
+
+    $(document).ready(function(){
+    $.ajax({
+            method:"GET",
+            url: "https://api.coinlore.net/api/ticker/?id=80",        
+          }).done(function(msg) {   
+            console.log(msg);
+            var ETH_price = (msg[0].price_usd);
+            var my_ETH_price = (total_profit/(10**18))*ETH_price; 
+            $("#ETH_price").text(toPoint_2(my_ETH_price));
+
+            var ETH_CT = CT_price*ETH_price*CT_balance/(10**18);
+            $("#ETH_CT_price").text(toPoint_2(ETH_CT));
+            
+          });
+    })
 
 
 
