@@ -65,6 +65,7 @@ async function SHOW_CONTRACT() {
     var hidden_str = (coinbase.substring(6,38));
     var replace_part = coinbase.replace(hidden_str,"...");            
     $("#my_address").text(replace_part);
+    $("#check_address").text(replace_part);
    
 
     // 取得帳號餘額
