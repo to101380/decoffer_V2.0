@@ -24,8 +24,7 @@ h3{
 }
 
 h4{
-  font-family:微軟正黑體;
-  color: #84959e; 
+  font-family:微軟正黑體;  
   font-size: 22px;
   font-weight: bold;
 }
@@ -88,7 +87,7 @@ a{
 
 
 .main_style{
-  background-color:#f2f3f7;
+ /* background-color:#f2f3f7;*/
   display: flex;
   justify-content: center;
   align-items: center;

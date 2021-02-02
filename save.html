@@ -57,136 +57,170 @@
 	<section id="save-story"> 
 
 
-		<section class="main_style">
+		<section>
+
+			<div class="main_style">
 			<div class=" row justify-content-between my_address cos_shadow">
 			    <div class="status"></div>
 			    <div style="margin-right:8px;"><span id="my_address"></span></div>
 			</div>
-			<div class="container">
-				<div class="row justify-content-md-center">
-					
-					<div class="col-md-6">
 
-						<div class="info_card shadow-sm" >	
-							
-				      		<h4 class="text-center" style="margin: 18px;">我的帳戶</h4>		      			
-				      		<hr>
-
-					      	<p> 本利和 :  </p>
-					      	<img class="img_center" src="./static/css/img/ETH.png" width="60" height="60" style="margin-top:45px;">
-					      	<h4  class="text-center" style="margin:20px 10px 0px 10px;"><span id="total_value"></span> ETH</h4>
-					      	<p class="text-center" style="margin: 0px 10px 45px 10px;">$<span id="ETH_price"></span></p>
-					      	<p> 我鎖入的ETH : <span id="coffer_value"></span> ETH  </p>	 
-						    <p> 利息 : <span id="profit"></span> ETH</p> 						   
-						    <p> 贖回 : <span id="my_CT"></span> / <span id="payable_CT"></span></p>
-						    <p> 解約金 : <span id="termination_fee"></span></p>
-						    <div class="cos_center justify-content-around" style="flex-direction: row; margin-top: 45px;">
-						    	<button type="button" class="btn btn-dark btn-sm" onclick="approve_ct();" id="approve_btn">approve</button>
-							    <button type="button" class="btn btn-dark btn-sm" onclick="_withdraw();" id="withdraw_btn">withdraw</button>
-							    <button type="button" class="btn btn-dark btn-sm disabled" id="withdraw_disbtn" >withdraw</button>
-						    </div>
-							   
-							
-						
-						    
-						    
-					    </div>					
-											
-					</div>
-					<div class="col-md-6">
-
-						<div class="info_card shadow-sm " >					      	
-
-				      		<h4 class="text-center" style="margin: 18px;">Credit Token 資訊</h4>
-				      		<hr>
-
-				      		<p> 我持有的枚數 : </p>
-				      		<img class="img_center" src="./static/css/img/credit_coin.png" width="60" height="60" style="margin-top:45px;">
-				      		<h4 class="text-center" style="margin:20px 10px 0px 10px;"><span id="CT_balance"></span> CT</h4>
-				      		<p class="text-center" style="margin: 0px 10px 45px 10px;">$<span id="ETH_CT_price"></span></p>
-						    <p> 流動在外的枚數 : <span id="out_share"></span> </p>
-						    <p> 已銷毀的枚數 : <span id="destroy"></span></p>					    
-						    <p> 我持有的比例 : <span id="hold_rate"></span></p>
-						    <p> 目前價格 : <span id="ct_price"></span> ETH / CT</p>
-					       
-						    
-					    </div>					
-						
-					</div>
-
-				</div>
+			<nav>
+			  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+			    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">存款</a>
+			    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">資訊</a>
+			    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">事業</a>
+			  </div>
+			</nav>
 			</div>
-		</section>
-		<section class="main_style" style="background-color: #FFFFFF;">
-		<h1> 建立存款單</h1> 
-
-		<div class="container" style="margin-top: 35px;">
-		  <div class="row">
-		    <div class="col-md-6 cos_center ">
-		      
-		        <div id="ticket">
-
-			     	<div class="group">      
-				      <input type="text" class="save_amount" required>
-				      <span class="highlight"></span>
-				      <span class="bar"></span>
-				      <p>我的餘額 : 
-				      	<span id="my_balance"></span> 
-				      	<span id="have_no">餘額不足</span>
-				      	<span id="last">至少投入 <span id="last_amount"></span> ETH </span>
-				      </p>	
-
-				      <label>ETH</label>
-				    </div>	
 
 
-				    <div class="group">      
-				      <input type="text" class="recommender" required>
-				      <span class="highlight"></span>
-				      <span class="bar"></span>
-				      <p>輸入推薦人地址，立即折1%手續費。</p>
-				      <p style="color: #d6394c;">
-				      	<span id="not_length">地址不符合規格</span>
-				      	<span id="not_self">不能輸入自己</span>
-				      	<span id="not_recommender">該地址不具備推薦人資格</span>
-				      </p>		
-				      <label>推薦人地址 (非必填)</label>
-				    </div>	
+			<div class="tab-content" id="nav-tabContent">
 
-			    </div>   	   
-		      	  
+			  <!-- 建立存款單 -->	
+			  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+			  							
 
-		    </div>
-		    <div class="col-md-6 cos_center">
+					<div class="container" style="margin-top: 60px; margin-bottom: 60px;">
+					  <div class="row">
+					    <div class="col-md-6 cos_center ">
+					      	<h4 style="margin-bottom: 70px;"> 建立存款單</h4>
+					        <div id="ticket">						        	 	
+						     	<div class="group">      
+							      <input type="text" class="save_amount" required>
+							      <span class="highlight"></span>
+							      <span class="bar"></span>
+							      <p>我的餘額 : 
+							      	<span id="my_balance"></span> 
+							      	<span id="have_no">餘額不足</span>
+							      	<span id="last">至少投入 <span id="last_amount"></span> ETH </span>
+							      </p>	
 
-		    	<div class="info_card subscribe shadow bg-white rounded" style="width: 300px; padding: 50px;">
-		    		<h4 class="text-center">確認資訊</h4>
+							      <label>ETH</label>
+							    </div>	
 
-		    		
-		    		<div class="cos_center" style="margin: 30px;">
-		    			<img src="./static/css/img/credit_coin.png" width="60" height="60">	
-		    		</div>
-		    		<p>儲存地址 : <span id="check_address"></span> </p>
-				    <p>投入金額 : <span id="check_save_amount"></span> ETH</p>			
+
+							    <div class="group">      
+							      <input type="text" class="recommender" required>
+							      <span class="highlight"></span>
+							      <span class="bar"></span>
+							      <p>輸入推薦人地址，立即折1%手續費。</p>
+							      <p style="color: #d6394c;">
+							      	<span id="not_length">地址不符合規格</span>
+							      	<span id="not_self">不能輸入自己</span>
+							      	<span id="not_recommender">該地址不具備推薦人資格</span>
+							      </p>		
+							      <label>推薦人地址 (非必填)</label>
+							    </div>	
+
+						    </div>   	   
+					      	  
+
+					    </div>
+					    <div class="col-md-6 cos_center">
+
+					    	<div class="info_card subscribe shadow bg-white rounded" style="width: 300px; padding: 50px;">
+					    		<h4 class="text-center">確認資訊</h4>
+
+					    		
+					    		<div class="cos_center" style="margin: 30px;">
+					    			<img src="./static/css/img/credit_coin.png" width="60" height="60">	
+					    		</div>
+					    		<p>儲存地址 : <span id="check_address"></span> </p>
+							    <p>投入金額 : <span id="check_save_amount"></span> ETH</p>			
+								
+								<P>CT枚數 : <span id="check_cm_amount"></span> CM</P>
+								<p>我推薦人 : <span id="check_recommender"></span> </p>	
+
+
+								<div class="cos_center">
+									<button id="confirm_invest" type="button" class="btn btn-dark btn-sm"  style="margin: 30px 2px;" >確定儲存</button>	
+								</div>	    	
+
+						    </div>		      
+
+					      
+					    </div>
+					  </div>		  
+					</div>
+
+
+			  </div>
+
+			  <!-- 我的資訊 -->
+			  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" >
+
+				  	<div class="container" style="margin-top: 60px; margin-bottom: 60px;">
+						<div class="row justify-content-md-center">
+							
+							<div class="col-md-6">
+
+								<div class="info_card shadow bg-white rounded" >	
+									
+						      		<h4 class="text-center" style="margin: 18px;">我的帳戶</h4>		      			
+						      		<hr>
+
+							      	<p> 本利和 :  </p>
+							      	<img class="img_center" src="./static/css/img/ETH.png" width="60" height="60" style="margin-top:45px;">
+							      	<h4  class="text-center" style="margin:20px 10px 0px 10px;"><span id="total_value"></span> ETH</h4>
+							      	<p class="text-center" style="margin: 0px 10px 45px 10px;">$<span id="ETH_price"></span></p>
+							      	<p> 我鎖入的ETH : <span id="coffer_value"></span> ETH  </p>	 
+								    <p> 利息 : <span id="profit"></span> ETH</p> 						   
+								    <p> 贖回 : <span id="my_CT"></span> / <span id="payable_CT"></span></p>
+								    <p> 解約金 : <span id="termination_fee"></span></p>
+								    <div class="cos_center justify-content-around" style="flex-direction: row; margin-top: 45px;">
+								    	<button type="button" class="btn btn-dark btn-sm" onclick="approve_ct();" id="approve_btn">approve</button>
+									    <button type="button" class="btn btn-dark btn-sm" onclick="_withdraw();" id="withdraw_btn">withdraw</button>
+									    <button type="button" class="btn btn-dark btn-sm disabled" id="withdraw_disbtn" >withdraw</button>
+								    </div>									   
 					
-					<P>CT枚數 : <span id="check_cm_amount"></span> CM</P>
-					<p>我推薦人 : <span id="check_recommender"></span> </p>	
+								    
+							    </div>					
+													
+							</div>
+							<div class="col-md-6">
+
+								<div class="info_card shadow bg-white rounded " >					      	
+
+						      		<h4 class="text-center" style="margin: 18px;">Credit Token 資訊</h4>
+						      		<hr>
+
+						      		<p> 我持有的枚數 : </p>
+						      		<img class="img_center" src="./static/css/img/credit_coin.png" width="60" height="60" style="margin-top:45px;">
+						      		<h4 class="text-center" style="margin:20px 10px 0px 10px;"><span id="CT_balance"></span> CT</h4>
+						      		<p class="text-center" style="margin: 0px 10px 45px 10px;">$<span id="ETH_CT_price"></span></p>
+								    <p> 流動在外的枚數 : <span id="out_share"></span> </p>
+								    <p> 已銷毀的枚數 : <span id="destroy"></span></p>					    
+								    <p> 我持有的比例 : <span id="hold_rate"></span></p>
+								    <p> 目前價格 : <span id="ct_price"></span> ETH / CT</p>
+							       
+								    
+							    </div>					
+								
+							</div>
+
+						</div>
+					</div>
+
+			  	
+			  </div>
 
 
-					<div class="cos_center">
-						<button id="confirm_invest" type="button" class="btn btn-dark btn-sm"  style="margin: 30px 2px;" >確定儲存</button>	
-					</div>	    	
+			  <!-- 事業 -->
+			  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
-			    </div>		      
+			  	
 
-		      
-		    </div>
-		  </div>		  
-		</div>
+			  </div>
 
+
+			</div>
+
+
+			
+		</section>
 
 		
-		</section>	
 
 
 
