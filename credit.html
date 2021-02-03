@@ -16,7 +16,7 @@
 	<link href="./static/css/credit.css" rel="stylesheet">
 	<link rel="icon" href="./static/css/img/de_coffer_logo.png" type="image/x-icon">
 
-    <title>decoffer</title>
+    <title>decoffer</title> 
 </head>
 
 
@@ -41,13 +41,45 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="./hight_staking.html"> 質押 </a>
 		      </li>	
-		      <li class="nav-item">
+		     <!--  <li class="nav-item">
 		        <a class="nav-link" href="./insurance.html"> 保險 </a>
-		      </li>	      
+		      </li>	  -->     
 		    </ul>
 		  </div>
 		</div>
 	</nav>
+
+	<section class="main_style" style="padding: 10px;">
+		
+		<div class="container info_card shadow  bg-white rounded" style="padding-top: 50px; padding-bottom: 50px;">
+		  <div class="row">
+		    <div class="col-md-5 cos_center">
+
+		    	<div class="cos_center">
+		    		<img src="./static/css/img/credit_coin.png" width="120" height="120">
+		    		<h5 style="margin-top:10px;">Credit Token (CT)</h5>	
+		    		<p> $<span id="usd_price"></span> </p>	    		
+		    	</div>
+
+		    </div>
+		    <div class="col-sm-7">
+
+		    	<div>
+		    		<p>我的信用額度 (CT) : </p>		    		
+		    		<h4 class="text-center" style="margin:45px 10px 0px 10px;"> <span id="my_CT_balance"></span> CT</h4>
+		    		<p class="text-center" style="margin-bottom: 45px;"> $<span id="my_ct_price"></span> </p>
+		    		<hr>
+		    		<P>流通在外 : <span id="out_share"></span> CT</P>
+		    		<P>已銷毀 : <span id="destroy"></span> CT</P>
+		    		<p>含 ETH 比 : <span id="price"></span> ETH / CT</p>			    		    		
+		    	</div>	    	
+
+
+		    </div>
+		  </div>		  
+		</div>
+
+	</section>
 
 	<section class="main_style">
 
@@ -56,8 +88,7 @@
 			<p>借出金額 : <span id="borrow_eth"></span></p>
 			<p>抵押CT : <span id="mortgage_CT"></span></p>
 			<p>利息 : <span id="interest"></span></p>
-			<p>應付 : <span id="total_payable"></span></p>
-			<p>價格 : <span id="price"></span> ETH / CT</p>
+			<p>應付 : <span id="total_payable"></span></p>			
 			
 		</div>
 		
@@ -97,7 +128,7 @@
 	<script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="application/javascript"></script>   
     <script src="./static/js/credit.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
