@@ -123,25 +123,54 @@ async function SHOW_CONTRACT() {
     $("#CT_balance").text(toPoint_4(ethers.utils.formatUnits(CT_balance)));
     $("#my_CT").text(toPoint_4(ethers.utils.formatUnits(CT_balance))); 
     $("#hold_rate").text(toPercent(CT_balance/out_share));
+    
+    if(allowance >= CT_balance ){
+        $("#withdraw_btn").css("display","block");
+        $("#approve_btn").css("display","none");
+        $("#withdraw_disbtn").css("display","none");
+    }
+
+
+
    
+    
   
 
     var CT_price = now_balance/out_share;       
     $("#ct_price").text(toPoint_8(CT_price));
 
+
+
+    //------------------------------------------------------------------------
+                    //------------------計算獲利-------------
     var profit = get_CT*CT_price; // 計算持有的CT目前價格
     profit = profit-save_price;   // 目前價格 - 儲存價格 = 當前獲利 
     var actual = profit*actual_profit/1000;  // 當前獲利乘上配比成數    
     var after_fee = actual-(actual*profit_rake/1000);//配比後的獲利減掉手續費
+
+    if(after_fee<0){
+        after_fee = 0;
+    }
+
     var sum = Number(coffer_value)+after_fee // 本利和
     $("#profit").text(toPoint_4(after_fee/10**18));
     $("#total_value").text(toPoint_4(sum/10**18));
+    $("#check_total_profit").text(toPoint_4(sum/10**18));
 
 
+                    //------------------計算違約金-------------
     var discount = profit - actual;
     var fin = credit-discount;   
     $("#fin").text(toPoint_4(fin/10**18));
+    $("#check_fin").text(toPoint_4(fin/10**18));
+
+    var check_actual_profit = sum-fin;
+    $("#check_actual_profit").text(toPoint_4(check_actual_profit/10**18));
  
+    //------------------------------------------------------------------------
+
+
+
 
     const set_save_amount = () => {
         var save_amount = $("#ticket .save_amount").val(); 
@@ -172,7 +201,12 @@ async function SHOW_CONTRACT() {
             url: "https://api.coinlore.net/api/ticker/?id=80",        
           }).done(function(msg) {   
             console.log(msg);
-            var ETH_price = (msg[0].price_usd);      
+            var ETH_price = (msg[0].price_usd); 
+            $("#ETH_price").text(toPoint_4(ETH_price*sum/10**18));
+
+            var ETH_CT_price = ETH_price*CT_price;
+            ETH_CT_price = ETH_CT_price*CT_balance/10**18;
+            $("#ETH_CT_price").text(toPoint_2(ETH_CT_price));
             
           });
     })
