@@ -84,24 +84,25 @@
 					  <div class="row">					    
 					    <div class="col-md-12 cos_center">
 
-					    	<div class="info_card subscribe shadow bg-white " style="width: 500px; padding:40px;">
+					    	<div class="info_card subscribe shadow bg-white" id="ticket" style="width: 300px; padding:40px;">
 
 					    		<h4 class="text-center">存入Decoffer  </h4>
+					    		<hr>
 					    		
 					    		<div class="cos_center" style="margin: 50px 30px;">
 					    			<img src="./static/css/img/lock_up.png" width="66.5" height="60">	
 					    		</div>
 
-					    		<p style="font-size: 8px; color:#5b5a69;">Deposit</p>
-					    		<input type="text" class="type-1" placeholder="0.0 ETH" style="margin:0px;">
-					    		<p class="text-right" style="margin-bottom: 50px; color:#5B677C; font-size: 8px;">我的餘額: <span id="my_balance"></span> ETH</p>
+					    		<p style="font-size: 8px; color:#5b5a69;">輸入存款金額</p>				    		
+						    	<input  type="text" class="type-1 save_amount" placeholder="0.0 ETH" >
+					    	
+					    		<p class="text-center" style="margin-bottom: 50px; color:#5B677C; font-size: 8px;">我的餘額: <span id="my_balance"></span> ETH</p>
 
-					    		
+					    	
 					    		<p>用戶地址 : <span id="check_address"></span> </p>
 							    <p>投入金額 : <span id="check_save_amount"></span> ETH</p>		
-								<P>CT枚數 : <span id="check_cm_amount"></span> CM</P>	
-
-
+								<P>CT枚數 : <span id="check_ct_amount"></span> CT</P>
+													
 
 
 								<div class="cos_center">
@@ -137,8 +138,8 @@
 							      	<p class="text-center" style="margin: 0px 10px 45px 10px;">$<span id="ETH_price"></span></p>
 							      	<p> 我鎖入的ETH : <span id="coffer_value"></span> ETH  </p>	 
 								    <p> 利息 : <span id="profit"></span> ETH</p> 						   
-								    <p> 贖回 : <span id="my_CT"></span> / <span id="payable_CT"></span></p>
-								    <p> 解約金 : <span id="termination_fee"></span></p>
+								    <p> 贖回 : <span id="my_CT"></span> CT / <span id="payable_CT"></span> CT </p>
+								    <p> 解約金 : <span id="fin"></span> ETH</p>
 								    <div class="cos_center justify-content-around" style="flex-direction: row; margin-top: 45px;">
 								    	<button type="button" class="btn btn-dark btn-sm" onclick="approve_ct();" id="approve_btn">approve</button>
 									    <button type="button" class="btn btn-dark btn-sm" onclick="_withdraw();" id="withdraw_btn">withdraw</button>

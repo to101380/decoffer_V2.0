@@ -98,6 +98,8 @@ a{
 
 
 
+
+
 .drop-shadow {
     -webkit-filter: drop-shadow(-3px -3px 4px rgba(255, 255, 255, 0.85)) drop-shadow(2px 2px 3px rgba(52, 58, 64, 0.55));
     filter:drop-shadow(-4px 3px 4px rgba(255, 255, 255, 0.85)) drop-shadow(4px 3px 4px rgba(52, 58, 64, 0.70)); 
@@ -175,16 +177,19 @@ input {
   width:100%;
   margin:10px 0;
   padding:10px;
+  font-size: 28px;  
+  text-align: center;
 }
 
 .type-1 {
   border-radius:10px;
-  border: 1px solid #eee;
+  border: 0px solid #eee;
   transition: .3s border-color;
 }
 
-.type-1:hover {
-  border: 1px solid #aaa;
+::placeholder {
+  font-size: 28px;  
+  text-align: center;
 }
 
 

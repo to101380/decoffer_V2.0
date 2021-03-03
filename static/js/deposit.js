@@ -99,12 +99,11 @@ async function SHOW_CONTRACT() {
   
 
     //fee
-    var least_invest = await de_coffer.fee_info(1,1);       //1-1最小投資金額
-    var exchange_rate = await de_coffer.fee_info(1,2);      //1-2匯兌比 ，目前CT價格12%off
-    var credit_weight = await de_coffer.fee_info(1,4);      //1-3 credit的權重 
-    var profit_rake = await de_coffer.fee_info(1,5);        //1-5收益抽成  
-    var credit = await de_coffer.fee_info(3,1);             //2-3推薦資格   
-    $("#last_amount").text(least_invest/(10**18));
+    var minimum_amount = await de_coffer.fee_info(1,1);     //1-1最小投資金額
+    var exchange_rate = await de_coffer.fee_info(1,2);      //1-2匯兌比 (default : 120)
+    var actual_profit = await de_coffer.fee_info(1,4);      //1-4實際獲利比 (default : 90)
+    var profit_rake = await de_coffer.fee_info(1,5);        //1-5收益抽成  (default : 30)
+    var credit_rate = await de_coffer.fee_info(3,1);        //3-1信用成數比例 (default : 20)    
     
 
     //coffer_info   
@@ -112,10 +111,9 @@ async function SHOW_CONTRACT() {
     var save_price = await de_coffer.coffer_info(coinbase,2);
     var credit = await de_coffer.coffer_info(coinbase,3);
     var get_CT = await de_coffer.coffer_info(coinbase,4);  
-    $("#coffer_value").text(ethers.utils.formatUnits(coffer_value));
-    $("#earned_bonus").text(ethers.utils.formatUnits(earned_bonus));
+    $("#coffer_value").text(ethers.utils.formatUnits(coffer_value));    
     $("#payable_CT").text(toPoint_4(ethers.utils.formatUnits(get_CT)));
-
+    
 
     //CT_info
     var CT_balance = await ct_token.balanceOf(coinbase);   
@@ -131,14 +129,27 @@ async function SHOW_CONTRACT() {
     var CT_price = now_balance/out_share;       
     $("#ct_price").text(toPoint_8(CT_price));
 
-    
-    
- 
+    var profit = get_CT*CT_price; // 計算持有的CT目前價格
+    profit = profit-save_price;   // 目前價格 - 儲存價格 = 當前獲利 
+    var actual = profit*actual_profit/1000;  // 當前獲利乘上配比成數    
+    var after_fee = actual-(actual*profit_rake/1000);//配比後的獲利減掉手續費
+    var sum = Number(coffer_value)+after_fee // 本利和
+    $("#profit").text(toPoint_4(after_fee/10**18));
+    $("#total_value").text(toPoint_4(sum/10**18));
 
+
+    var discount = profit - actual;
+    var fin = credit-discount;   
+    $("#fin").text(toPoint_4(fin/10**18));
+ 
 
     const set_save_amount = () => {
         var save_amount = $("#ticket .save_amount").val(); 
         $("#check_save_amount").text(save_amount);
+
+        var ct_amount = save_amount-(save_amount*exchange_rate/1000);
+        ct_amount = ct_amount*out_share/now_balance;
+        $("#check_ct_amount").text( toPoint_4(ct_amount));
     }; 
 
 
@@ -161,12 +172,7 @@ async function SHOW_CONTRACT() {
             url: "https://api.coinlore.net/api/ticker/?id=80",        
           }).done(function(msg) {   
             console.log(msg);
-            var ETH_price = (msg[0].price_usd);
-            var my_ETH_price = (total_profit/(10**18))*ETH_price; 
-            $("#ETH_price").text(toPoint_2(my_ETH_price));
-
-            var ETH_CT = CT_price*ETH_price*CT_balance/(10**18);
-            $("#ETH_CT_price").text(toPoint_2(ETH_CT));
+            var ETH_price = (msg[0].price_usd);      
             
           });
     })
@@ -186,13 +192,13 @@ var comfirm_transfer = document.querySelector("#confirm_invest");
 comfirm_transfer.addEventListener("click", async (e) => {
     e.preventDefault();
     var save = document.querySelector(".save_amount").value;   
-    var amount = (Number(save)).toString(); 
-    var recommender = document.querySelector(".recommender").value;
+    var amount = (Number(save)).toString();     
 
     let overrides = {        
         value: ethers.utils.parseEther(amount)     // ether in this case MUST be a string       
     };   
     
+    _save_coffer(overrides);
      
    
 });
@@ -200,9 +206,9 @@ comfirm_transfer.addEventListener("click", async (e) => {
 
 
 
-function _save_coffer(recommender,overrides){
+function _save_coffer(overrides){
 
-    let tx = de_coffer.invest(recommender,overrides).then(function(receipt){             
+    let tx = de_coffer.Deposit(overrides).then(function(receipt){             
          location.reload();          
      });;
                  
