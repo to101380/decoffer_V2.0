@@ -80,9 +80,9 @@ async function SHOW_CONTRACT() {
   
 
     // 建立合約
-    decoffer_address = "0x30A1D915b221882cF955c41c7E7A82Dd3CF24852";
+    decoffer_address = "0x17f93904ac6670Cfc4d452d439c9ef884fCc4Aba";
     var decoffer_abi = [{"constant":false,"inputs":[],"name":"safe","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"fee_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"coffer_info","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"authorize","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"p1","type":"uint256"},{"name":"p2","type":"uint256"},{"name":"p3","type":"uint256"}],"name":"set_parameter","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get_balance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get_out_share","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"cancel_authorization","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"input","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"Deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_ct","type":"uint256"},{"name":"_eth","type":"uint256"},{"name":"_user","type":"address"}],"name":"CT_swap_ETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":true,"stateMutability":"payable","type":"constructor"}]
-    var ct_address = "0x9411B2449cd71926E5BB695B6AC14CDbaf2c3eCf";
+    var ct_address = "0x2D277e2555031e6eD79aaEd3379fC28C15AD303a";
     var ct_abi = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"acceptOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"},{"name":"data","type":"bytes"}],"name":"approveAndCall","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"newOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tokenAddress","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferAnyERC20Token","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenOwner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Approval","type":"event"}]
 
     de_coffer = new ethers.Contract(decoffer_address, decoffer_abi, signer);
@@ -124,7 +124,9 @@ async function SHOW_CONTRACT() {
     $("#my_CT").text(toPoint_4(ethers.utils.formatUnits(CT_balance))); 
     $("#hold_rate").text(toPercent(CT_balance/out_share));
     
-    if(allowance >= CT_balance ){
+    
+
+    if(allowance>Number(CT_balance)){
         $("#withdraw_btn").css("display","block");
         $("#approve_btn").css("display","none");
         $("#withdraw_disbtn").css("display","none");
@@ -141,16 +143,16 @@ async function SHOW_CONTRACT() {
 
 
 
-    //------------------------------------------------------------------------
-                    //------------------計算獲利-------------
+//------------------------------------------------------------------------
+    //------------------計算獲利-------------
     var profit = get_CT*CT_price; // 計算持有的CT目前價格
     profit = profit-save_price;   // 目前價格 - 儲存價格 = 當前獲利 
     var actual = profit*actual_profit/1000;  // 當前獲利乘上配比成數    
     var after_fee = actual-(actual*profit_rake/1000);//配比後的獲利減掉手續費
 
-    if(after_fee<0){
-        after_fee = 0;
-    }
+    // if(after_fee<0){
+    //     after_fee = 0;
+    // }
 
     var sum = Number(coffer_value)+after_fee // 本利和
     $("#profit").text(toPoint_4(after_fee/10**18));
@@ -158,16 +160,22 @@ async function SHOW_CONTRACT() {
     $("#check_total_profit").text(toPoint_4(sum/10**18));
 
 
-                    //------------------計算違約金-------------
-    var discount = profit - actual;
-    var fin = credit-discount;   
+    //------------------計算違約金-------------
+    var discount = profit - actual; // 當前獲利-實際獲利 = 折抵金額
+    var fin = credit-discount;      // 應付金額 - 折抵金額 = 當前違約金額
+
+    if(fin<0){
+        fin = 0;
+    }
+
     $("#fin").text(toPoint_4(fin/10**18));
     $("#check_fin").text(toPoint_4(fin/10**18));
 
+    //------------------確認最後提領金額-------------
     var check_actual_profit = sum-fin;
     $("#check_actual_profit").text(toPoint_4(check_actual_profit/10**18));
  
-    //------------------------------------------------------------------------
+//------------------------------------------------------------------------
 
 
 
@@ -272,3 +280,7 @@ function approve_ct(){
                  
       
 }
+
+
+
+

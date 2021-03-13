@@ -45,6 +45,12 @@ a{
 }  
 
 
+    
+  
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
 
 
 #have_no{
@@ -55,18 +61,6 @@ a{
 #last{
   color: #d6394c;
   display: none; 
-}
-
-#not_length{
-  display: none;
-}
-
-#not_self{
-  display: none;
-}
-
-#not_recommender{
-  display: none;
 }
 
 
@@ -137,10 +131,11 @@ a{
 
 
 .info_card{ 
+  max-width: 650px;
+  margin: 35px auto;
   border-radius: 12px;
-  padding: 18px 36px; 
-  margin:12px;
-  background-color: #FFFF;
+  padding: 18px 36px;   
+  background-color: #FFFF; 
 }
 
 
@@ -263,14 +258,9 @@ input {
   }
 }
 
-/*
-@media (max-width: 360px) { 
 
-  h1{
-    font-size: 30px;
-  }
 
-}*/
+
 
 
 .form__field {
@@ -284,6 +274,8 @@ input {
   padding: 7px 0;
  
 }
+
+
 
 
 
