@@ -74,6 +74,7 @@ a{
 }
 
 
+
 .main_style{
  /* background-color:#f2f3f7;*/
   display: flex;
@@ -134,7 +135,7 @@ a{
   max-width: 650px;
   margin: 35px auto;
   border-radius: 12px;
-  padding: 18px 36px;   
+  padding: 18px 18px;   
   background-color: #FFFF; 
 }
 

@@ -112,7 +112,7 @@ async function SHOW_CONTRACT() {
     var credit = await de_coffer.coffer_info(coinbase,3);
     var get_CT = await de_coffer.coffer_info(coinbase,4);  
     $("#coffer_value").text(ethers.utils.formatUnits(coffer_value));    
-    $("#payable_CT").text(toPoint_4(ethers.utils.formatUnits(get_CT)));
+    $("#payable_CT").text(toPoint_6(ethers.utils.formatUnits(get_CT)));
     
 
     //CT_info
@@ -121,10 +121,15 @@ async function SHOW_CONTRACT() {
     var allowance = await ct_token.allowance(coinbase,decoffer_address);     
     ct_totalSupply = await ct_token.totalSupply();             
     $("#CT_balance").text(toPoint_4(ethers.utils.formatUnits(CT_balance)));
-    $("#my_CT").text(toPoint_4(ethers.utils.formatUnits(CT_balance))); 
+    $("#my_CT").text(toPoint_6(ethers.utils.formatUnits(CT_balance))); 
     $("#hold_rate").text(toPercent(CT_balance/out_share));
     
-    
+
+    if(CT_balance < get_CT ){
+        $("#error").css("display","block");
+        $("#tick").css("display","none");
+        $("#withdraw_condition").css("color","red");
+    }
 
     if(allowance>Number(CT_balance)){
         $("#withdraw_btn").css("display","block");
